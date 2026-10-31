@@ -1,0 +1,17 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local Development Scripts
+serve.ps1
+start_presentation.bat
+Open_In_Chrome.bat
+Open_In_Browser.url
+
+# Heavy Video Files (Hosted on Google Drive CDN)
+assets/videos/*.mp4
+
+# Node / Dependencies / Vercel
+node_modules/
+.vercel

@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>CineCraft | Drone Structural Inspection & Engineering Media</title>
+  <meta name="description" content="LGED, PWD, RHD ও সরকারি মেগা প্রকল্পের জন্য ড্রোন স্ট্রাকচারাল ইন্সপেকশন, সিনেমাটোগ্রাফি ও ডিজিটাল ডাটাবেজ সমাধান।">
+  <meta name="theme-color" content="#070b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/svg+xml" href="assets/images/cinecraft_logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/cinecraft_logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       FLOATING MODERN PILL NAVBAR (SINGLE-LINE DESKTOP & ADAPTIVE MOBILE LAYOUT)
+       ========================================================================== -->
+  <header class="navbar" id="mainNavbar">
+    <div class="navbar-container">
+      <div class="nav-wrapper">
+        <a href="#hero" class="brand-area">
+          <div class="brand-icon">
+            <img src="assets/images/cinecraft_logo.svg" alt="CineCraft Official Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" data-i18n="brand_name">CineCraft</span>
+            <span class="brand-tag" data-i18n="brand_sub">Government Project Media Specialist</span>
+          </div>
+        </a>
+
+        <nav class="nav-center-menu">
+          <ul class="nav-menu" id="navLinks">
+            <li><a href="#hero" class="nav-link active" data-i18n="nav_home">হোম</a></li>
+            <li><a href="#brief" class="nav-link" data-i18n="nav_summary">ব্রিফ</a></li>
+            <li><a href="#showreel" class="nav-link" data-i18n="nav_theater">ভিডিওজ</a></li>
+            <li><a href="#projects" class="nav-link" data-i18n="nav_projects">প্রজেক্ট</a></li>
+            <li><a href="#lens" class="nav-link" data-i18n="nav_lens">জুম</a></li>
+            <li><a href="#services" class="nav-link" data-i18n="nav_services">সেবা</a></li>
+            <li><a href="#map" class="nav-link" data-i18n="nav_map">ম্যাপ</a></li>
+            <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">ফটোজ</a></li>
+            <li><a href="#biams" class="nav-link" data-i18n="nav_biams">BIAMS</a></li>
+            <li><a href="#safety" class="nav-link" data-i18n="nav_safety">সেফটি</a></li>
+            <li><a href="#faqs" class="nav-link" data-i18n="nav_faqs">FAQ</a></li>
+            <li><a href="#contact" class="nav-link nav-btn-contact" data-i18n="nav_contact">যোগাযোগ</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-cta-group">
+          <button class="btn-ctrl" id="themeToggleBtn" title="থিম পরিবর্তন (ডার্ক / লাইট) / Toggle Theme">☀️</button>
+          <button class="btn-lang" id="langToggleBtn" title="ভাষা পরিবর্তন / Switch Language">
+            <span style="color:var(--accent-gold);">বাংলা</span> | EN
+          </button>
+          <button class="btn-presentation-pill" id="presModeToggleBtn" data-i18n="btn_presentation">
+            ⛶ প্রেজেন্টেশন
+          </button>
+          <button class="mobile-toggle" id="mobileMenuBtn">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (Anti-Gravity Futuristic LiDAR & Drone Experience)
+       ========================================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/images/hero_gorai_panorama.jpg" alt="Gorai River Twin Bridge">
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <!-- Interactive Anti-Gravity WebGL 3D Point-Cloud Simulation -->
+    <canvas id="antiGravityCanvas" class="anti-gravity-webgl-canvas"></canvas>
+
+    <!-- Floating Anti-Gravity Telemetry HUD Elements (Parallax & Zero-G Physics) -->
+    <div class="ag-orbit-container" id="agOrbit">
+      <div class="ag-chip ag-chip-1" data-depth="0.22">
+        <div class="ag-chip-icon">🛰️</div>
+        <div class="ag-chip-body">
+          <div class="ag-chip-title" data-i18n="hud_rtk_title">RTK-GNSS TELEMETRY</div>
+          <div class="ag-chip-data">LAT: 25.7439°N • LON: 89.2752°E</div>
+          <div class="ag-chip-status"><span class="ag-live-dot"></span> <span data-i18n="hud_rtk_status">±০.৮ মিমি সাব-সেন্টিমিটার ফিক্স</span></div>
+        </div>
+      </div>
+
+      <div class="ag-chip ag-chip-2" data-depth="0.30">
+        <div class="ag-chip-icon">🔬</div>
+        <div class="ag-chip-body">
+          <div class="ag-chip-title" data-i18n="hud_optics_title">DJI MAVIC 4 PRO ১০০এমপি</div>
+          <div class="ag-chip-data">100MP OPTICAL • 4K 10-BIT D-LOG</div>
+          <div class="ag-chip-status"><span class="ag-live-dot"></span> <span data-i18n="hud_optics_status">সাব-মিলিমিটার ডিফেক্ট ডায়াগনস্টিক</span></div>
+        </div>
+      </div>
+
+      <div class="ag-chip ag-chip-3" data-depth="0.18">
+        <div class="ag-chip-icon">⚡</div>
+        <div class="ag-chip-body">
+          <div class="ag-chip-title" data-i18n="hud_flight_title">MISSION FLIGHT DYNAMICS</div>
+          <div class="ag-chip-data">ALT: 142.5m AGL • VEL: 2.8m/s</div>
+          <div class="ag-chip-status"><span class="ag-live-dot"></span> <span data-i18n="hud_flight_status">১০০% নন-ইনভেসিভ নিরাপদ ফ্লাইট</span></div>
+        </div>
+      </div>
+
+      <div class="ag-chip ag-chip-4" data-depth="0.26">
+        <div class="ag-chip-icon">🏛️</div>
+        <div class="ag-chip-body">
+          <div class="ag-chip-title" data-i18n="hud_clients_title">GOVERNMENT INTEGRATION</div>
+          <div class="ag-chip-data">LGED • PWD • BD RAILWAY</div>
+          <div class="ag-chip-status"><span class="ag-live-dot"></span> <span data-i18n="hud_clients_status">মেগা অবকাঠামো প্রকৌশল অডিট</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container hero-content-relative">
+      <div class="hero-center-box">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span data-i18n="hero_pill">LGED • PWD • বাংলাদেশ রেলওয়ে • RHD • রংপুর সেন্ট্রাল হাব ও ৬৪ জেলা</span>
+        </div>
+
+        <h1 class="hero-title" data-i18n="hero_title">
+          জাতীয় মেগা অবকাঠামো ও সেতু সুরক্ষায় <br>
+          <span class="gradient-text">অত্যাধুনিক ড্রোন ইন্সপেকশন</span>
+        </h1>
+
+        <p class="hero-subtitle" data-i18n="hero_desc">
+          স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED), গণপূর্ত অধিদপ্তর (PWD) ও বাংলাদেশ রেলওয়ের জন্য ১০০ মেগাপিক্সেল অপটিক্যাল স্ক্যান, সাব-মিলিমিটার স্ট্রাকচারাল হেলথ মনিটরিং এবং ৪কে এরিয়াল সিনেমাটোগ্রাফি।
+        </p>
+
+        <div class="hero-cta-wrapper">
+          <a href="#showreel" class="btn-main" data-i18n="hero_cta_video">
+            ▶ পোর্টফোলিও ভিডিও
+          </a>
+          <a href="#gallery" class="btn-main" data-i18n="hero_cta_gallery">
+            📷 পোর্টফোলিও ফটোস
+          </a>
+        </div>
+      </div>
+
+      <!-- Government Trust Bar -->
+      <div class="authority-bar">
+        <span class="authority-title" data-i18n="authority_title">বিশ্বস্ত সরকারি অংশীদার ও সহযোগিতাপ্রাপ্ত:</span>
+        <div class="authority-logos">
+          <span class="authority-tag"><span>●</span> LGED</span>
+          <span class="authority-tag"><span>●</span> PWD</span>
+          <span class="authority-tag"><span>●</span> <span data-i18n="partner_rail">বাংলাদেশ রেলওয়ে</span></span>
+          <span class="authority-tag"><span>●</span> RHD</span>
+          <span class="authority-tag"><span>●</span> <span data-i18n="partner_bridge">সেতু কর্তৃপক্ষ</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       METRICS STRIP
+       ========================================================================== -->
+  <section class="metrics-section">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-val">64<span class="highlight">+</span></div>
+          <div class="metric-label" data-i18n="stat_districts_lbl">৬৪ জেলায় সরাসরি অন-সাইট সেবা</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">100<span class="highlight">MP</span></div>
+          <div class="metric-label" data-i18n="stat_photos_lbl">DJI Mavic 4 Pro ১০০এমপি</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">100<span class="highlight">%</span></div>
+          <div class="metric-label" data-i18n="stat_access_lbl">অগম্য পিয়ার, বিয়ারিং ও ফাসাদ</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">100<span class="highlight">%</span></div>
+          <div class="metric-label" data-i18n="stat_safety_lbl">১০০% নন-ইনভেসিভ (Non-Invasive)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DEDICATED EXECUTIVE BRIEFING (NATIONWIDE LGED, PWD, RHD)
+       ========================================================================== -->
+  <section class="section" id="brief" style="padding-top:20px;">
+    <div class="container">
+      <div class="brief-card">
+        <div class="brief-top">
+          <div class="brief-target">
+            <h3 data-i18n="brief_title">দেশব্যাপী নির্বাহী প্রকৌশলী ও প্রকৌশল অধিদপ্তরের উদ্দেশ্যে বিশেষ নিবেদন</h3>
+            <p data-i18n="brief_sub">রংপুর সেন্ট্রাল হাব সহ ৬৪ জেলার অবকাঠামো সুরক্ষায় ডিজিটাল রূপান্তর</p>
+          </div>
+          <span class="brief-tag" data-i18n="brief_badge">অফিসিয়াল টেকনিক্যাল ব্রিফিং</span>
+        </div>
+
+        <div class="brief-text" data-i18n="brief_body">
+          জনাব, স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED), গণপূর্ত অধিদপ্তর (PWD), বাংলাদেশ রেলওয়ে এবং সড়ক ও জনপথ (RHD) সারাদেশে জাতীয় ও আঞ্চলিক যোগাযোগ ব্যবস্থায় হাজার হাজার সেতু, কালভার্ট এবং প্রশাসনিক মেগা কমপ্লেক্স সফলভাবে বাস্তবায়ন করেছে। সময়ানুবর্তী রক্ষণাবেক্ষণ ও কাঠামোগত নিরাপত্তা নিশ্চিত করতে প্রথাগত ঝুলন্ত দড়ি বা মাচার মাধ্যমে পরিদর্শন অত্যন্ত ঝুঁকিপূর্ণ, সময়সাপেক্ষ ও ব্যয়বহুল। <strong>CineCraft</strong> রংপুর সেন্ট্রাল হাব সহ সমগ্র বাংলাদেশের ৬৪ জেলায় আধুনিক ড্রোন ফ্লিট (DJI Mavic 4 Pro, Mavic 3 Pro, DJI Mavic 3 Enterprise RTK, Mavic 2) এবং পেশাদার গ্রাউন্ড ক্যামেরা (ভিডিওর জন্য Sony FX3, FX30; ছবির জন্য Canon 5D Mark IV, Sony A7 III, A7 IV) সহ ডেডিকেটেড ওয়েব-ডাটাবেজ সিস্টেমের মাধ্যমে সেতু ও ভবনের প্রতিটি বিয়ারিং প্যাড, পিয়ার ক্যাপ, এক্সপানশন জয়েন্ট, স্টিল ট্রাস এবং ফাসাদ ক্ল্যাডিংয়ের মিলিমিটার-লেভেল ডিফেক্ট শনাক্ত করে দ্রুততম সময়ে ডিজিটাল ডাটাবেজে রূপান্তর করে।
+        </div>
+
+        <div class="brief-grid">
+          <div class="brief-item">
+            <div class="icon">🔬</div>
+            <h4 data-i18n="brief_p1_title">মিলিমিটার-লেভেল নির্ভুলতা</h4>
+            <p data-i18n="brief_p1_desc">DJI Mavic 4 Pro ড্রোন ১০০ মেগাপিক্সেল অপটিক্যাল জুমে কংক্রিটের অতিক্ষুদ্র ফাটল, রিবার মরিচা, বিয়ারিং স্থানচ্যুতি ও ফাসাদ সিলান্ট লিকেজ নিখুঁতভাবে শনাক্তকরণ।</p>
+          </div>
+          <div class="brief-item">
+            <div class="icon">⚡</div>
+            <h4 data-i18n="brief_p2_title">১০০% নিরাপদ ও সময় সাশ্রয়ী</h4>
+            <p data-i18n="brief_p2_desc">নদী বা মহাসড়কে যানবাহন ও সাধারণ মানুষের চলাচলে কোনো ব্যাঘাত না ঘটিয়ে বিপজ্জনক উচ্চতায় নিরাপদ ড্রোন ফ্লাইট পরিচালনা।</p>
+          </div>
+          <div class="brief-item">
+            <div class="icon">💾</div>
+            <h4 data-i18n="brief_p3_title">স্মার্ট ডাটাবেজ ও ক্লাউড আর্কাইভিং</h4>
+            <p data-i18n="brief_p3_desc">শুধুমাত্র ফাইল নয়, বরং প্রকৌশলীদের জন্য সার্চযোগ্য BIAMS ওয়েব পোর্টাল ও স্বয়ংক্রিয় পরিদর্শন রিপোর্ট তৈরি।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4K CINEMATIC SHOWREEL (Clean Bezel-less Video Player)
+       ========================================================================== -->
+  <section class="section" id="showreel">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="video_tag">সিনেমাটিক কভারেজ</span>
+        <h2 class="section-title" data-i18n="video_title">৪কে আল্ট্রা এইচডি ভিডিও শো-রিল</h2>
+        <p class="section-desc" data-i18n="video_sub">সরকারি প্রকল্পের উদ্বোধন, ভিআইপি পরিদর্শন ও টেকনিক্যাল মিটিংয়ে প্রদর্শনের উপযোগী সিনেমাটিক গ্রেডিংকৃত ৪কে ভিডিও।</p>
+      </div>
+
+      <div class="showreel-wrapper">
+        <div class="showreel-tabs">
+          <button class="tab-btn active" id="tabVideoKushtia">
+            <span data-i18n="video_tab_kushtia"><span>🚆</span> কুষ্টিয়া গড়াই স্টিল ট্রাস মেগা রেল ও সড়ক সেতু • বাংলাদেশ রেলওয়ে (Kushtia.mp4)</span>
+          </button>
+          <button class="tab-btn" id="tabVideoBarishal">
+            <span data-i18n="video_tab_barishal"><span>🌊</span> বরিশাল প্রিস্ট্রেসড কংক্রিট গার্ডার সেতু • LGED (barishal.mp4)</span>
+          </button>
+        </div>
+
+        <div class="video-player-frame" id="theaterPlayerFrame">
+          <!-- Aerospace Mission Control Telemetry HUD -->
+          <div class="video-telemetry-hud" id="videoHud">
+            <div class="hud-top-bar">
+              <div class="hud-rec-indicator"><span class="hud-rec-dot"></span> REC 4K UHD 60FPS</div>
+              <div class="hud-flight-id" id="hudFlightId">MISSION FEED 01: GORAI TRUSS [LGED]</div>
+              <div class="hud-battery">BAT 88% | 22.8V</div>
+            </div>
+
+            <!-- Central Aerospace Crosshair and Interactive Reticle -->
+            <div class="hud-crosshair-wrap">
+              <div class="hud-crosshair"></div>
+              <div class="hud-horizon-line"></div>
+              <div class="hud-target-box" id="hudTargetBox">
+                <span class="box-bracket tl"></span>
+                <span class="box-bracket tr"></span>
+                <span class="box-bracket bl"></span>
+                <span class="box-bracket br"></span>
+                <span class="box-tag" id="hudTargetTag">SCAN TARGET: TRUSS GUSSET NODE #04</span>
+              </div>
+            </div>
+
+            <div class="hud-bottom-bar">
+              <div class="hud-coord" id="hudCoords">GPS: 23°54'31.7"N 89°07'19.6"E</div>
+              <div class="hud-gimbal" id="hudGimbal">GIMBAL PITCH: -48° | ISO 100</div>
+              <div class="hud-alt" id="hudAlt">ALT: 114.2m AGL</div>
+            </div>
+          </div>
+
+          <iframe id="mainTheaterIframe" class="main-theater-iframe" src="https://drive.google.com/file/d/1LBH3spWRLz8yEdBA9vq29UK6rsX3rpqT/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+        </div>
+
+        <!-- Clean Chapter Strip -->
+        <div class="chapters-grid" id="videoChaptersBar">
+          <!-- Injected dynamically via main.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED PROJECT CASE STUDIES (LGED, PWD, RHD)
+       ========================================================================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="proj_tag">প্রজেক্ট কেস স্টাডিজ</span>
+        <h2 class="section-title" data-i18n="proj_title">জাতীয় গুরুত্বপূর্ণ অবকাঠামো ও সেতুতে সফল মিশন</h2>
+        <p class="section-desc" data-i18n="proj_sub">কুষ্টিয়া, বরিশাল এবং গণপূর্ত অধিদপ্তরের (PWD) প্রধান মেগা অবকাঠামোর বাস্তবিক পরিদর্শন ও হাই-রেজুলেশন ডকুমেন্টেশন।</p>
+      </div>
+
+      <div class="case-studies-list">
+        
+        <!-- Case 1: Local Government Engineering Department (Gorai Steel Truss Bridge) -->
+        <div class="case-card">
+          <div class="case-media-side">
+            <div class="case-location-badge" data-i18n="proj1_loc">📍 স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) • কুষ্টিয়া গড়াই করিডোর</div>
+            <img src="assets/images/hero_gorai_panorama.jpg" alt="Gorai Bridge" class="main-cover" id="proj1MainImg">
+            <div class="case-thumbs-strip">
+              <div class="case-thumb active" onclick="document.getElementById('proj1MainImg').src='assets/images/hero_gorai_panorama.jpg'">
+                <img src="assets/thumbnails/hero_gorai_panorama.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj1MainImg').src='assets/images/truss_symmetry_apex.jpg'">
+                <img src="assets/thumbnails/truss_symmetry_apex.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj1MainImg').src='assets/images/truss_gusset_multibolt.jpg'">
+                <img src="assets/thumbnails/truss_gusset_multibolt.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj1MainImg').src='assets/images/truss_rivet_detail.jpg'">
+                <img src="assets/thumbnails/truss_rivet_detail.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj1MainImg').src='assets/images/gorai_aerial_approach.jpg'">
+                <img src="assets/thumbnails/gorai_aerial_approach.jpg" alt="thumb">
+              </div>
+            </div>
+          </div>
+
+          <div class="case-info-side">
+            <div>
+              <div class="case-tags">
+                <span class="case-tag green" data-i18n="proj1_tag1">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED)</span>
+                <span class="case-tag gold" data-i18n="proj1_tag2">Through Steel Truss</span>
+                <span class="case-tag" data-i18n="proj1_tag3">ট্রাস ও সংযোগ সড়ক অডিট</span>
+              </div>
+              <h3 class="case-title" data-i18n="proj1_name">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - কুষ্টিয়া গড়াই স্টিল ট্রাস সেতু করিডোর অডিট</h3>
+              <p class="case-description" data-i18n="proj1_desc">
+                গড়াই নদীর উপর স্থানীয় সরকার প্রকৌশল অধিদপ্তরের (LGED) আওতাধীন গুরুত্বপূর্ণ স্টিল ট্রাস সেতুর প্রতিটি প্যানেল পয়েন্ট, ডায়াগোনাল মেম্বার, এবং সংযোগ করিডোরের উচ্চ রেজোলিউশনের ড্রোন ইন্সপেকশন সম্পন্ন করা হয়েছে। ভারী যানবাহন চলাচলের প্রভাবে ট্রাসের মাইক্রো-মুভমেন্ট ও নাট-বোল্টের নিরাপত্তা নিখুঁতভাবে যাচাই করা হয়েছে।
+              </p>
+            </div>
+
+            <div class="findings-panel">
+              <div class="findings-panel-title" data-i18n="findings_title">🔍 প্রধান ইঞ্জিনিয়ারিং পর্যবেক্ষণ:</div>
+              <ul>
+                <li data-i18n="proj1_f1">স্টিল ট্রাস প্যানেল ও গাসেট প্লেট: মাল্টি-বোল্ট জয়েন্টে শিয়ার ফাটল ও মাইক্রো-মুভমেন্ট লেজার স্ক্যান।</li>
+                <li data-i18n="proj1_f2">রিভেট হেড ও জং পর্যবেক্ষণ: ১০০ মেগাপিক্সেল ম্যাক্রো লেন্সে রিভেটের ক্ষয় ও মরিচা শনাক্তকরণ।</li>
+                <li data-i18n="proj1_f3">সংযোগ করিডোর ও ডায়াগোনাল টাই মেম্বার: ভারবহন ক্ষমতা ও উইন্ড ব্রেসিং এর স্ট্রাকচারাল স্থায়িত্ব মূল্যায়ন।</li>
+              </ul>
+            </div>
+
+            <div class="case-actions">
+              <button class="btn-main" onclick="document.getElementById('tabVideoKushtia').click(); document.getElementById('showreel').scrollIntoView({behavior:'smooth'});" data-i18n="btn_watch_reel">
+                ▶ ৪কে রিল দেখুন
+              </button>
+              <button class="btn-ghost" onclick="document.querySelectorAll('.station-item')[0].click(); document.getElementById('lens').scrollIntoView({behavior:'smooth'});" data-i18n="proj1_cta_lens">
+                🔬 রেলসেতু ডিফেক্ট লেন্স
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2: Local Government Engineering Department (LGED Prestressed Concrete Bridge) -->
+        <div class="case-card reversed">
+          <div class="case-media-side">
+            <div class="case-location-badge" data-i18n="proj2_loc">📍 স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) • বরিশাল ডিভিশন</div>
+            <img src="assets/images/hero_barishal_bridge.jpg" alt="Barishal Bridge" class="main-cover" id="proj2MainImg">
+            <div class="case-thumbs-strip">
+              <div class="case-thumb active" onclick="document.getElementById('proj2MainImg').src='assets/images/hero_barishal_bridge.jpg'">
+                <img src="assets/thumbnails/hero_barishal_bridge.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj2MainImg').src='assets/images/girder_soffit_five_bay.jpg'">
+                <img src="assets/thumbnails/girder_soffit_five_bay.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj2MainImg').src='assets/images/barishal_bearing_close.jpg'">
+                <img src="assets/thumbnails/barishal_bearing_close.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj2MainImg').src='assets/images/vegetation_joint_ficus.jpg'">
+                <img src="assets/thumbnails/vegetation_joint_ficus.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj2MainImg').src='assets/images/barishal_pier_shaft.jpg'">
+                <img src="assets/thumbnails/barishal_pier_shaft.jpg" alt="thumb">
+              </div>
+            </div>
+          </div>
+
+          <div class="case-info-side">
+            <div>
+              <div class="case-tags">
+                <span class="case-tag green" data-i18n="proj2_tag1">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED)</span>
+                <span class="case-tag gold" data-i18n="proj2_tag2">Prestressed Concrete I-Girder</span>
+                <span class="case-tag" data-i18n="proj2_tag3">বিয়ারিং ও পিয়ার স্কাউরিং অডিট</span>
+              </div>
+              <h3 class="case-title" data-i18n="proj2_name">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - বরিশাল ডিভিশনাল গার্ডার সেতু ও পিয়ার অডিট</h3>
+              <p class="case-description" data-i18n="proj2_desc">
+                কীর্তনখোলা নদী অববাহিকায় স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED)-এর অধীনে নির্মিত মাল্টি-স্প্যান প্রিস্ট্রেসড কংক্রিট আই-গার্ডার সেতুর আন্ডার-ডেক সোফিট, ইলাস্টোমেরিক বিয়ারিং প্যাড এবং রিভারবেড পিয়ারের ড্রোন ক্যামেরা ভিত্তিক নিবিড় ভিজ্যুয়াল ও থার্মাল ইন্সপেকশন সম্পন্ন।
+              </p>
+            </div>
+
+            <div class="findings-panel">
+              <div class="findings-panel-title" data-i18n="findings_title">🔍 প্রধান ইঞ্জিনিয়ারিং পর্যবেক্ষণ:</div>
+              <ul>
+                <li data-i18n="proj2_f1">আন্ডার-ডেক ৫-বে গার্ডার ও সোফিট স্ক্যান: স্ল্যাবের নিচের ডায়াফ্রাম বিম ও ক্ষয়প্রাপ্ত কংক্রিট ম্যাপিং।</li>
+                <li data-i18n="proj2_f2">ইলাস্টোমেরিক বেয়ারিং প্যাড অডিট: অতিরিক্ত ওজনের চাপ ও ওজোন ক্র্যাকিং বা প্লিন্থ স্পলিং ডিটেকশন।</li>
+                <li data-i18n="proj2_f3">পিয়ার ক্যাপ ও হাইড্রোলিক স্কাউরিং: নদীর তলদেশের স্কাউরিং ও পিয়ারের কংক্রিট লিচিং পর্যবেক্ষণ।</li>
+              </ul>
+            </div>
+
+            <div class="case-actions">
+              <button class="btn-main" onclick="document.getElementById('tabVideoBarishal').click(); document.getElementById('showreel').scrollIntoView({behavior:'smooth'});" data-i18n="btn_watch_reel">
+                ▶ ৪কে রিল দেখুন
+              </button>
+              <button class="btn-ghost" onclick="document.querySelectorAll('.station-item')[1].click(); document.getElementById('lens').scrollIntoView({behavior:'smooth'});" data-i18n="proj2_cta_lens">
+                🔬 বিয়ারিং ও জয়েন্ট লেন্স
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 3: Public Works Department (PWD National Administrative Complex) -->
+        <div class="case-card">
+          <div class="case-media-side">
+            <div class="case-location-badge" data-i18n="proj3_loc">📍 গণপূর্ত অধিদপ্তর (PWD) • ঢাকা হেড ও জাতীয় সচিবালয় কমপ্লেক্স</div>
+            <img src="assets/images/pwd_mega_complex.jpg" alt="PWD Government Mega Complex" class="main-cover" id="proj3MainImg">
+            <div class="case-thumbs-strip">
+              <div class="case-thumb active" onclick="document.getElementById('proj3MainImg').src='assets/images/pwd_mega_complex.jpg'">
+                <img src="assets/thumbnails/pwd_mega_complex.jpg" alt="thumb">
+              </div>
+              <div class="case-thumb" onclick="document.getElementById('proj3MainImg').src='assets/images/pwd_facade_inspection.jpg'">
+                <img src="assets/thumbnails/pwd_facade_inspection.jpg" alt="thumb">
+              </div>
+            </div>
+          </div>
+
+          <div class="case-info-side">
+            <div>
+              <div class="case-tags">
+                <span class="case-tag green" data-i18n="proj3_tag1">গণপূর্ত অধিদপ্তর (PWD)</span>
+                <span class="case-tag gold" data-i18n="proj3_tag2">আইকনিক মেগা কমপ্লেক্স</span>
+                <span class="case-tag" data-i18n="proj3_tag3">হাই-রাইজ ফাসাদ অডিট</span>
+              </div>
+              <h3 class="case-title" data-i18n="proj3_name">গণপূর্ত অধিদপ্তর (PWD) - জাতীয় প্রশাসনিক মেগা কমপ্লেক্স ও ফাসাদ অডিট</h3>
+              <p class="case-description" data-i18n="proj3_desc">
+                গণপূর্ত অধিদপ্তর (PWD) কর্তৃক নির্মিত দেশের বৃহত্তম প্রশাসনিক বহুতল মেগা কমপ্লেক্স ও আধুনিক গ্লাস-ফাসাদ ভবনের বহির্ভাগের নিখুঁত ড্রোন অডিট। হাই-রাইজ ভবনের প্রতিটি উইন্ডো সিল্যান্ট, স্ট্রাকচারাল কার্টেন গ্লাস, ছাদের প্যারাপেট জয়েন্ট এবং বহির্ভাগের ফাটল ড্রোন সেন্সরে মিলিমিটার-পর্যায়ে স্ক্যান করা হয়েছে।
+              </p>
+            </div>
+
+            <div class="findings-panel">
+              <div class="findings-panel-title" data-i18n="findings_title">🔍 প্রধান ইঞ্জিনিয়ারিং পর্যবেক্ষণ:</div>
+              <ul>
+                <li data-i18n="proj3_f1">কার্টেন গ্লাস ক্ল্যাডিং ও অ্যালুমিনিয়াম মুলিয়নের অ্যাঙ্কর বোল্ট স্থায়িত্ব ও কম্পন প্রতিরোধ পরীক্ষা।</li>
+                <li data-i18n="proj3_f2">প্যারাপেট ওয়াল ও ছাদের এক্সপানশন জয়েন্টে আবহাওয়াজনিত সিলান্ট ক্ষয় ও লিকেজ ঝুঁকি শনাক্ত।</li>
+                <li data-i18n="proj3_f3">ভবনের বাহ্যিক ফাসাদের হাই-রেজুলেশন অর্থোম্যাপ প্রস্তুত যা দীর্ঘমেয়াদী রক্ষণাবেক্ষণে সহায়ক।</li>
+              </ul>
+            </div>
+
+            <div class="case-actions">
+              <button class="btn-main" onclick="document.querySelectorAll('.filter-btn[data-cat=\'pwd\']')[0].click(); document.getElementById('gallery').scrollIntoView({behavior:'smooth'});" data-i18n="proj3_cta_gallery">
+                🖼️ PWD হাই-রেজ ভিউ
+              </button>
+              <button class="btn-ghost" onclick="document.querySelectorAll('.station-item')[4].click(); document.getElementById('lens').scrollIntoView({behavior:'smooth'});" data-i18n="proj3_cta_lens">
+                🔬 ফাসাদ ডিফেক্ট লেন্স
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE DEEP-ZOOM STRUCTURAL LENS
+       ========================================================================== -->
+  <section class="section" id="lens">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="lens_tag">ইন্টারেক্টিভ ডায়াগনস্টিক</span>
+        <h2 class="section-title" data-i18n="lens_title">ডিপ-জুম স্ট্রাকচারাল ইন্সপেকশন লেন্স</h2>
+        <p class="section-desc" data-i18n="lens_sub">আমাদের ১০০ মেগাপিক্সেল ড্রোন ক্যামেরার অবিশ্বাস্য ক্ষমতা নিজে পরীক্ষা করে দেখুন। মাউস বা আঙুল দিয়ে যেকোনো ফাটল বা ত্রুটির ওপর ম্যাগনিফাইং লেন্স পরিচালনা করুন।</p>
+      </div>
+
+      <div class="lens-container">
+        <!-- Station Selector Sidebar -->
+        <div class="stations-list" id="lensStationsList">
+          <!-- Injected via main.js -->
+        </div>
+
+        <!-- Canvas Area -->
+        <div class="lens-view-wrapper">
+          <div class="lens-canvas-area" id="lensViewArea">
+            <img src="assets/images/bearing_pot_spall.jpg" alt="Inspection Lens" id="lensMainImg">
+            
+            <div class="lens-loupe" id="magnifierCircle">
+              <div class="lens-loupe-cross"></div>
+            </div>
+
+            <div class="lens-tag-box" id="lensAnnotBox">
+              <span class="lens-tag-label" id="lensAnnotTag" data-i18n="lens_annot_tag_init">প্লিথ ক্র্যাক</span>
+            </div>
+          </div>
+
+          <div class="lens-bar-footer">
+            <div class="lens-metric-item">
+              <div class="lbl" data-i18n="lens_sensor_lbl">ক্যামেরা অপটিক্স:</div>
+              <div class="val" id="lensSensorVal">DJI Mavic 4 Pro (100MP Optical)</div>
+            </div>
+            <div class="lens-metric-item">
+              <div class="lbl" data-i18n="lens_metric_lbl">পরিমাপ ও ডায়াগনস্টিক:</div>
+              <div class="val" id="lensReadingVal" style="color:var(--accent-gold);" data-i18n="lens_reading_init">৩.৫ মিমি স্প্যালিং</div>
+            </div>
+            <div class="lens-metric-item">
+              <div class="lbl" data-i18n="lens_action_lbl">প্রকৌশল সুপারিশ:</div>
+              <div class="val" id="lensActionVal" style="color:var(--primary);" data-i18n="lens_action_init">ইপক্সি গ্রাউটিং প্রয়োজন</div>
+            </div>
+            <div class="lens-zoom-btn-group">
+              <button class="btn-ctrl" id="btnZoomOut">-</button>
+              <span style="font-size:0.84rem; font-weight:700; min-width:36px; text-align:center;" id="zoomLevelDisplay">2.5x</span>
+              <button class="btn-ctrl" id="btnZoomIn">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OUR CAPABILITIES / SERVICES (Bento Grid)
+       ========================================================================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="srv_badge">পূর্ণাঙ্গ সমাধান</span>
+        <h2 class="section-title" data-i18n="srv_title">আমাদের বিশেষায়িত সেবাসমূহ</h2>
+        <p class="section-desc" data-i18n="srv_desc">সরকারি প্রকল্পের জন্য এন্ড-টু-এন্ড মিডিয়া কভারেজ, স্ট্রাকচারাল ড্রোন সার্ভে ও আধুনিক সফটওয়্যার সমাধান।</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-box">🔬</div>
+          <h3 class="service-title" data-i18n="srv_s1_title">ড্রোন স্ট্রাকচারাল ইন্সপেকশন</h3>
+          <p class="service-desc">
+            <span data-i18n="srv_s1_desc">সেতুর অগম্য পিয়ার ক্যাপ, বিয়ারিং প্যাড ও আন্ডার-ডেক গার্ডারের মিলিমিটার-লেভেল ফটো ও ভিডিও ডায়াগনস্টিক。</span>
+          </p>
+          <ul class="service-features-list">
+            <li data-i18n="srv_s1_f1">বিয়ারিং প্যাড ও পেডেস্টাল স্প্যাল ডিটেকশন</li>
+            <li data-i18n="srv_s1_f2">এক্সপানশন জয়েন্টে আগাছা ও রুট অডিট</li>
+            <li data-i18n="srv_s1_f3">স্টিল ট্রাস ও গাছেট রিভেট ইন্টেগ্রিটি</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">🎥</div>
+          <h3 class="service-title" data-i18n="srv_s2_title">৪কে সিনেমাটোগ্রাফি ও ডকুমেন্টারি</h3>
+          <p class="service-desc">
+            <span data-i18n="srv_s2_desc">ভিআইপি পরিদর্শন, প্রকল্প উদ্বোধন ও বার্ষিক অর্জনের জন্য কালার-গ্রেডেড সিনেমাটিক ডকুমেন্টারি ও মোশন গ্রাফিক্স。</span>
+          </p>
+          <ul class="service-features-list">
+            <li data-i18n="srv_s2_f1">10-bit D-Log ব্রডকাস্ট কালার গ্রেডিং</li>
+            <li data-i18n="srv_s2_f2">সিনেমাটিক এরিয়াল মাস্টার শটস</li>
+            <li data-i18n="srv_s2_f3">অন-গ্রাউন্ড ফুলফ্রেম ক্যামেরা কভারেজ</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">💻</div>
+          <h3 class="service-title" data-i18n="srv_s3_title">ওয়েব ও ডাটাবেজ সিস্টেমস</h3>
+          <p class="service-desc">
+            <span data-i18n="srv_s3_desc">সরকারি দপ্তরের জন্য কাস্টমাইজড ডিজিটাল পোর্টাল, সার্চযোগ্য ব্রিজ ডাটাবেজ ও ক্লাউড আর্কাইভিং সলিউশন。</span>
+          </p>
+          <ul class="service-features-list">
+            <li data-i18n="srv_s3_f1">BIAMS ক্লাউড ডাটাবেজ পোর্টাল</li>
+            <li data-i18n="srv_s3_f2">এক ক্লিকে স্বয়ংক্রিয় PDF রিপোর্ট তৈরি</li>
+            <li data-i18n="srv_s3_f3">সরকারি দপ্তরের জন্য রেসপনসিভ ওয়েবসাইট</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">🗺️</div>
+          <h3 class="service-title" data-i18n="srv_s4_title">জিআইএস ও এরিয়াল ম্যাপিং</h3>
+          <p class="service-desc">
+            <span data-i18n="srv_s4_desc">নদীর তলদেশের স্রোতধারা, এপ্রোচ করিডোর ও স্কয়ারিং (Scouring) জোনের অর্থোমোজাইক ড্রোন ম্যাপিং。</span>
+          </p>
+          <ul class="service-features-list">
+            <li data-i18n="srv_s4_f1">হাই-রেজুলেশন 2D অর্থোম্যাপ তৈরি</li>
+            <li data-i18n="srv_s4_f2">রিভার ব্যাংক ও এপ্রোচ রোড অডিট</li>
+            <li data-i18n="srv_s4_f3">বন্যা পরবর্তী ক্ষতিগ্রস্ত অবকাঠামো সার্ভে</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">🏢</div>
+          <h3 class="service-title" data-i18n="srv_p5_title">গণপূর্ত (PWD) মেগা কমপ্লেক্স ও ফাসাদ অডিট</h3>
+          <p class="service-desc" data-i18n="srv_p5_desc">
+            বহুতল সরকারি ভবন, সার্কিট হাউজ ও প্রশাসনিক কমপ্লেক্সের ফাসাদ ক্ল্যাডিং, প্যারাপেট ও ছাদের ড্রোন স্ট্রাকচারাল অডিট।
+          </p>
+          <ul class="service-features-list">
+            <li data-i18n="srv_p5_f1">ঝুঁকিপূর্ণ এক্সটেরিয়র কার্টেন গ্লাস ও ক্ল্যাডিং স্ক্যান</li>
+            <li data-i18n="srv_p5_f2">প্যারাপেট ও জয়েন্ট ওয়াটারপ্রুফিং সিলান্ট অডিট</li>
+            <li data-i18n="srv_p5_f3">সরকারি মেগা অবকাঠামোর পূর্ণাঙ্গ ৪কে এরিয়াল ডকুমেন্টেশন</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">⚡</div>
+          <h3 class="service-title" data-i18n="srv_p6_title">রংপুর সেন্ট্রাল হাব ও দেশব্যাপী ৬৪ জেলায় দ্রুত সেবা</h3>
+          <p class="service-desc" data-i18n="srv_p6_desc">
+            রংপুর সেন্ট্রাল হাব থেকে কুড়িগ্রাম, দিনাজপুর, বগুড়া, কুষ্টিয়া, যশোর, বরিশাল, ঢাকা সহ বাংলাদেশের যেকোনো প্রান্তে জরুরি প্রয়োজনে ২৪-৪৮ ঘণ্টার মধ্যে টিম মোবিলাইজেশন।
+          </p>
+          <ul class="service-features-list">
+            <li data-i18n="srv_p6_f1">দেশব্যাপী ৬৪ জেলায় সরাসরি অন-সাইট সেবা</li>
+            <li data-i18n="srv_p6_f2">দুর্যোগকালীন জরুরি অবকাঠামো স্বাস্থ্য নিরীক্ষা</li>
+            <li data-i18n="srv_p6_f3">সিভিল এভিয়েশন সেফটি ও সরকারি প্রটোকল কমপ্লায়েন্স</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Specialized Drone & Ground Camera Fleet Specifications -->
+      <div style="margin-top:36px; background:var(--bg-card); border:1.5px solid var(--border-light); border-radius:var(--radius-md); padding:28px 32px; box-shadow:var(--shadow-card);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:20px; border-bottom:1px solid var(--border-light); padding-bottom:16px;">
+          <div>
+            <span class="section-badge" style="margin-bottom:6px;" data-i18n="fleet_badge">অফিসিয়াল হার্ডওয়্যার ইকুইপমেন্ট ফ্লিট</span>
+            <h3 style="font-size:1.45rem; color:var(--text-white); font-weight:800; margin:0;" data-i18n="fleet_title">অত্যাধুনিক ড্রোন ফ্লিট ও গ্রাউন্ড সিনেমা ক্যামেরা সেটআপ</h3>
+          </div>
+          <div style="font-size:0.84rem; color:var(--accent-gold); font-weight:700; background:rgba(217,119,6,0.12); padding:6px 14px; border-radius:9999px; border:1px solid rgba(217,119,6,0.3);">
+            <span data-i18n="fleet_banner">প্রতিটি ছবি DJI Mavic 4 Pro ১০০ মেগাপিক্সেলে ধারণকৃত</span>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+          <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:20px; border-radius:var(--radius-sm);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-size:1.5rem;">🚁</span>
+              <strong style="color:var(--text-white); font-size:1.05rem;" data-i18n="fleet_drone_head">এরিয়াল ড্রোন ফ্লিট (Aerial Drones)</strong>
+            </div>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--text-body);">
+              <li data-i18n="fleet_d1"><strong style="color:var(--primary);">DJI Mavic 4 Pro:</strong> প্রাইমারি ১০০ মেগাপিক্সেল অপটিক্যাল সেন্সর (সাইটের সকল হাই-রেজুলেশন ছবির উৎস)</li>
+              <li data-i18n="fleet_d2"><strong style="color:var(--accent-gold);">DJI Mavic 3 Pro:</strong> ট্রিপল ক্যামেরা সিস্টেম ও অ্যাডভান্সড অপটিক্যাল জুম</li>
+              <li data-i18n="fleet_d3"><strong style="color:var(--accent-cyan);">DJI Mavic 3 Enterprise RTK:</strong> মিলিমিটার-লেভেল জিএনএসএস টেলিমিতি ও জিও-ম্যাপিং</li>
+              <li data-i18n="fleet_d4"><strong style="color:var(--text-muted);">DJI Mavic 2:</strong> টেকনিক্যাল রেকি ও দ্রুত প্রিলিমিনারি সার্ভে</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:20px; border-radius:var(--radius-sm);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-size:1.5rem;">🎥</span>
+              <strong style="color:var(--text-white); font-size:1.05rem;" data-i18n="fleet_ground_head">গ্রাউন্ড ক্যামেরা কিট (Ground Cameras)</strong>
+            </div>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--text-body);">
+              <li data-i18n="fleet_c1"><strong style="color:var(--primary);">সিনেমা ভিডিও:</strong> Sony FX3 ও Sony FX30 (Cinema Line 4K 120p, 10-bit 4:2:2 D-Log ব্রডকাস্ট)</li>
+              <li data-i18n="fleet_c2"><strong style="color:var(--accent-gold);">হাই-রেজ ছবি:</strong> Canon 5D Mark IV ফুল-ফ্রেম প্রো ডিটেইলড ফটোগ্রাফি</li>
+              <li data-i18n="fleet_c3"><strong style="color:var(--accent-teal);">স্পেশাল ফটো ক্যামেরা:</strong> Sony A7 III ও Sony A7 IV (ম্যাক্রো আর্কিটেকচারাল স্ট্যাটিক্স)</li>
+              <li data-i18n="fleet_c4"><strong style="color:var(--text-muted);">অতিরিক্ত রিগ:</strong> রোনিন আরএস স্ট্যাবিলাইজার ও ওয়্যারলেস অডিও মনিটরিং</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE BANGLADESH GIS MAP
+       ========================================================================== -->
+  <section class="section" id="map">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="map_tag">দেশব্যাপী অভিজ্ঞতা</span>
+        <h2 class="section-title" data-i18n="map_title">বাংলাদেশ ডিজিটাল ইন্সপেকশন মানচিত্র</h2>
+        <p class="section-desc" data-i18n="map_sub">রংপুর সেন্ট্রাল হাব সহ কুড়িগ্রাম, দিনাজপুর, বগুড়া, কুষ্টিয়া, যশোর, বরিশাল, ঢাকা—দেশব্যাপী ৬৪ জেলায় সরাসরি অন-সাইট পরিদর্শন উন্মুক্ত।</p>
+      </div>
+
+      <div class="gis-layout">
+        <div class="gis-map-box">
+                    <svg class="gis-map-svg" viewBox="0 0 1024 1024">
+            <defs>
+              <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur1" />
+                <feGaussianBlur stdDeviation="8" result="blur2" />
+                <feMerge>
+                  <feMergeNode in="blur2" />
+                  <feMergeNode in="blur1" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <radialGradient id="mapBgGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#16284a" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#040916" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <!-- Ambient Radar Glow Backdrop -->
+            <circle cx="512" cy="512" r="480" fill="url(#mapBgGrad)" pointer-events="none" />
+
+            <!-- Authentic Detailed Bangladesh Territorial Boundary (From User Map Specification) -->
+            <path class="map-district-path" d="M 241,74 L 245,80 L 251,86 L 259,92 L 266,98 L 273,100 L 280,107 L 284,114 L 290,119 L 289,123 L 297,123 L 301,130 L 307,132 L 310,126 L 318,128 L 325,133 L 332,131 L 326,127 L 322,120 L 315,117 L 313,110 L 318,104 L 325,103 L 332,108 L 339,112 L 340,120 L 344,126 L 344,134 L 347,142 L 351,149 L 359,152 L 364,160 L 372,165 L 380,168 L 388,166 L 394,170 L 402,170 L 407,175 L 408,167 L 414,162 L 413,156 L 411,149 L 414,144 L 417,137 L 425,137 L 427,145 L 434,148 L 439,156 L 441,164 L 445,172 L 449,177 L 451,185 L 446,193 L 446,201 L 447,209 L 449,217 L 451,225 L 451,233 L 450,241 L 449,249 L 447,257 L 445,265 L 447,273 L 453,278 L 461,276 L 469,279 L 477,282 L 485,286 L 493,288 L 501,290 L 509,292 L 517,294 L 525,297 L 533,299 L 541,296 L 549,295 L 557,295 L 565,295 L 573,297 L 581,295 L 589,297 L 597,297 L 605,296 L 613,294 L 621,293 L 629,292 L 637,292 L 645,292 L 653,293 L 661,296 L 669,297 L 677,300 L 685,299 L 693,296 L 699,302 L 707,300 L 715,297 L 723,295 L 731,295 L 739,294 L 747,294 L 755,293 L 763,294 L 771,299 L 779,303 L 787,308 L 795,310 L 803,315 L 808,321 L 814,329 L 818,336 L 814,343 L 806,345 L 798,343 L 790,339 L 782,340 L 785,348 L 786,356 L 785,364 L 781,372 L 779,380 L 778,388 L 774,394 L 769,398 L 770,406 L 765,413 L 757,418 L 749,418 L 747,421 L 741,422 L 739,430 L 739,438 L 736,446 L 731,452 L 726,445 L 719,441 L 714,443 L 714,451 L 707,452 L 700,445 L 698,453 L 693,460 L 685,463 L 677,461 L 669,460 L 663,463 L 664,471 L 658,476 L 651,480 L 645,488 L 646,496 L 644,504 L 641,512 L 634,515 L 636,521 L 639,527 L 635,532 L 638,540 L 642,547 L 647,555 L 649,563 L 651,571 L 654,579 L 654,587 L 656,595 L 657,603 L 664,607 L 662,599 L 661,591 L 663,583 L 670,580 L 676,588 L 680,596 L 682,604 L 684,612 L 687,620 L 695,624 L 702,621 L 710,617 L 716,610 L 719,602 L 718,594 L 716,586 L 715,578 L 719,570 L 725,562 L 732,556 L 738,551 L 740,543 L 739,535 L 738,527 L 738,519 L 744,515 L 749,523 L 757,523 L 764,516 L 772,515 L 775,523 L 780,517 L 787,520 L 787,528 L 789,536 L 791,544 L 792,552 L 795,560 L 798,568 L 799,576 L 798,584 L 796,592 L 797,600 L 799,608 L 800,616 L 799,624 L 803,632 L 809,639 L 810,647 L 812,655 L 817,663 L 819,671 L 818,679 L 819,687 L 821,695 L 822,703 L 823,711 L 825,719 L 826,727 L 827,735 L 828,743 L 824,749 L 826,757 L 827,765 L 829,773 L 831,781 L 830,789 L 829,797 L 828,805 L 828,813 L 828,821 L 829,829 L 830,837 L 831,845 L 832,853 L 834,861 L 833,869 L 826,874 L 821,869 L 819,861 L 813,858 L 805,857 L 800,850 L 795,843 L 789,850 L 782,851 L 778,859 L 772,865 L 774,873 L 772,881 L 772,889 L 778,897 L 780,905 L 780,913 L 782,921 L 785,929 L 788,937 L 789,945 L 783,946 L 779,938 L 775,930 L 771,922 L 767,914 L 764,906 L 757,898 L 751,890 L 748,882 L 748,874 L 747,866 L 743,858 L 738,850 L 738,842 L 742,835 L 739,837 L 731,840 L 723,838 L 724,830 L 724,822 L 722,814 L 725,806 L 727,798 L 730,790 L 731,782 L 729,774 L 726,766 L 725,758 L 723,750 L 719,742 L 718,734 L 713,727 L 712,719 L 710,711 L 708,703 L 704,695 L 699,687 L 694,679 L 688,671 L 680,663 L 673,657 L 672,649 L 670,649 L 664,655 L 656,655 L 650,662 L 642,664 L 647,672 L 647,680 L 640,686 L 632,688 L 625,693 L 618,687 L 610,681 L 602,682 L 594,676 L 587,669 L 583,661 L 578,653 L 575,645 L 572,637 L 564,630 L 559,622 L 553,614 L 545,615 L 538,619 L 541,620 L 549,623 L 554,631 L 548,635 L 553,638 L 561,640 L 562,648 L 566,652 L 568,660 L 570,668 L 577,676 L 580,684 L 585,691 L 591,699 L 591,707 L 590,715 L 589,723 L 588,731 L 587,739 L 585,747 L 581,755 L 574,763 L 566,767 L 558,769 L 555,762 L 555,754 L 556,746 L 558,738 L 562,730 L 564,722 L 564,714 L 562,706 L 562,698 L 561,690 L 553,685 L 546,678 L 547,670 L 544,662 L 541,657 L 534,651 L 534,657 L 541,663 L 542,671 L 543,679 L 548,685 L 553,693 L 555,701 L 556,709 L 557,717 L 556,725 L 550,733 L 545,741 L 540,749 L 533,757 L 526,756 L 520,762 L 516,770 L 514,778 L 512,786 L 508,794 L 500,799 L 492,799 L 484,794 L 477,790 L 476,782 L 479,775 L 477,772 L 473,766 L 471,768 L 468,774 L 463,768 L 460,760 L 460,752 L 459,744 L 456,736 L 455,728 L 455,720 L 451,728 L 451,736 L 456,744 L 455,752 L 452,759 L 453,767 L 453,775 L 455,783 L 451,790 L 443,795 L 436,795 L 428,794 L 425,794 L 430,802 L 424,807 L 417,807 L 414,813 L 408,808 L 407,800 L 407,792 L 407,785 L 409,777 L 406,770 L 402,762 L 402,770 L 404,778 L 399,786 L 398,794 L 399,802 L 393,810 L 385,810 L 381,802 L 381,794 L 384,786 L 381,788 L 374,793 L 374,801 L 373,809 L 374,817 L 366,821 L 360,818 L 361,810 L 358,802 L 353,799 L 353,807 L 346,808 L 340,801 L 340,793 L 338,785 L 339,778 L 343,771 L 341,763 L 338,755 L 342,748 L 339,740 L 334,732 L 332,724 L 329,716 L 329,708 L 329,700 L 326,692 L 324,684 L 322,676 L 323,668 L 320,660 L 324,652 L 324,644 L 317,638 L 313,630 L 311,622 L 313,614 L 315,606 L 321,598 L 326,591 L 318,589 L 310,588 L 302,590 L 294,586 L 290,578 L 294,570 L 297,562 L 300,554 L 296,551 L 288,546 L 282,538 L 275,535 L 272,528 L 270,520 L 271,512 L 273,504 L 274,496 L 281,494 L 289,488 L 293,481 L 292,473 L 290,465 L 288,457 L 290,449 L 291,441 L 290,433 L 282,429 L 274,428 L 266,428 L 258,423 L 250,419 L 242,418 L 234,415 L 226,408 L 218,405 L 210,399 L 203,393 L 199,385 L 193,378 L 193,370 L 198,362 L 202,354 L 208,346 L 209,338 L 211,330 L 219,328 L 225,335 L 231,340 L 236,335 L 242,330 L 247,322 L 249,314 L 249,306 L 249,298 L 255,292 L 263,293 L 271,294 L 279,292 L 287,292 L 295,295 L 303,294 L 311,293 L 319,294 L 320,286 L 327,279 L 319,277 L 311,274 L 306,267 L 302,260 L 302,252 L 295,246 L 288,250 L 280,253 L 272,248 L 264,247 L 256,240 L 250,234 L 248,227 L 243,221 L 237,214 L 229,209 L 224,201 L 216,204 L 208,205 L 201,198 L 200,190 L 199,182 L 202,174 L 208,166 L 209,158 L 210,150 L 217,143 L 225,140 L 233,135 L 233,127 L 241,122 L 249,115 L 256,113 L 252,105 L 245,101 L 237,100 L 231,99 L 232,91 L 236,83 L 240,75 Z
+" filter="url(#neonGlow)" />
+            
+            <!-- Coastal Delta Islands (Bay of Bengal) -->
+            <g filter="url(#neonGlow)">
+            <path class="map-island-path" d="M 284,122 L 284,126 L 280,127 L 283,125 Z" />
+            <path class="map-island-path" d="M 534,624 L 540,625 L 544,627 L 549,630 L 543,631 L 540,634 L 534,638 L 536,632 L 534,627 L 538,626 L 544,628 Z" />
+            <path class="map-island-path" d="M 534,628 L 540,631 L 538,635 L 537,633 L 536,629 L 538,634 Z" />
+            <path class="map-island-path" d="M 540,638 L 543,638 L 543,643 L 543,645 L 541,650 Z" />
+            <path class="map-island-path" d="M 542,638 L 541,643 L 540,649 Z" />
+            <path class="map-island-path" d="M 538,640 L 540,640 L 539,646 Z" />
+            <path class="map-island-path" d="M 670,642 L 674,644 L 668,644 L 673,643 Z" />
+            <path class="map-island-path" d="M 526,650 L 529,653 L 528,659 L 524,660 L 525,654 L 527,651 L 528,657 L 525,660 L 526,654 L 527,656 Z" />
+            <path class="map-island-path" d="M 550,650 L 556,649 L 555,654 L 551,658 L 552,664 Z" />
+            <path class="map-island-path" d="M 552,650 L 555,652 L 551,657 L 550,663 L 549,662 L 549,656 L 546,655 L 550,651 L 553,653 L 549,655 L 549,651 L 551,654 Z" />
+            <path class="map-island-path" d="M 668,676 L 674,678 L 679,684 L 682,690 L 685,696 L 687,702 L 686,708 L 681,712 L 675,712 L 670,707 L 666,701 L 664,695 L 663,689 L 665,683 L 668,677 L 674,679 L 678,685 L 682,691 L 684,697 L 686,703 L 685,709 L 679,712 L 673,710 L 669,704 L 666,698 L 664,692 L 665,686 L 667,680 L 672,678 L 677,684 L 680,690 L 683,696 L 685,702 L 684,708 L 679,711 L 673,709 L 669,703 L 666,697 L 665,691 L 666,685 L 669,679 Z" />
+            <path class="map-island-path" d="M 472,690 L 472,696 L 468,702 L 465,708 L 462,714 Z" />
+            <path class="map-island-path" d="M 470,692 L 472,695 L 468,701 L 464,707 L 461,713 L 460,713 L 458,711 L 455,715 L 453,711 L 458,708 L 464,703 L 469,697 L 471,693 L 469,699 L 465,705 Z" />
+            <path class="map-island-path" d="M 618,700 L 624,702 L 626,708 L 631,714 L 634,720 L 634,726 L 634,732 L 631,738 L 627,744 L 621,750 L 616,756 L 610,757 L 610,751 L 614,745 L 615,739 L 616,733 L 616,727 L 616,721 L 616,715 L 616,709 L 617,703 L 621,701 L 625,706 L 628,712 L 632,718 L 633,724 L 633,730 L 631,736 L 627,742 L 622,748 L 617,754 L 611,756 L 611,750 L 615,744 L 616,738 L 617,732 L 617,726 L 617,720 L 617,714 L 617,708 L 618,702 L 623,704 L 625,710 L 631,716 L 632,722 L 632,728 L 631,734 L 628,740 L 623,746 L 617,752 L 612,755 L 613,749 L 616,743 L 618,737 L 618,731 L 618,725 L 618,719 L 618,713 L 618,707 Z" />
+            <path class="map-island-path" d="M 464,704 L 460,708 L 455,713 L 455,710 Z" />
+            <path class="map-island-path" d="M 606,716 L 609,720 L 609,726 L 608,732 L 605,738 L 604,744 L 601,750 L 597,748 L 598,742 L 599,736 L 601,730 L 602,724 L 605,718 L 608,720 L 608,726 L 607,732 L 604,738 L 603,744 L 600,750 L 598,746 L 599,740 L 600,734 L 602,728 L 604,722 L 607,719 L 607,725 L 606,731 L 604,737 L 602,743 L 600,749 L 600,744 L 601,738 L 602,732 L 604,726 L 606,720 Z" />
+            <path class="map-island-path" d="M 418,722 L 419,721 L 418,727 L 416,733 L 412,739 L 415,745 L 417,751 L 415,757 L 413,763 L 412,769 L 411,769 L 408,765 L 408,760 L 403,757 L 401,752 L 398,746 L 397,740 L 396,734 L 397,728 L 398,725 L 401,730 L 401,736 L 402,742 L 405,748 L 407,754 L 404,756 L 402,751 L 399,745 L 398,739 L 396,733 L 398,727 L 400,728 L 400,734 L 401,740 L 403,746 L 405,752 L 404,754 L 401,748 L 399,742 L 398,736 L 397,730 L 399,732 Z" />
+            <path class="map-island-path" d="M 414,724 L 419,724 L 416,730 L 413,736 L 412,742 L 415,748 L 415,754 L 413,760 L 411,765 L 408,764 L 409,758 L 411,752 L 409,746 L 408,740 L 410,734 L 414,729 L 416,724 L 415,729 L 412,735 L 411,741 L 414,747 L 414,753 L 413,759 L 410,760 L 412,754 L 411,748 L 409,742 L 410,736 Z" />
+            <path class="map-island-path" d="M 526,734 L 529,738 L 529,744 L 528,750 L 524,749 L 525,743 L 524,737 L 528,735 L 528,741 L 527,747 L 525,749 L 526,743 L 525,737 L 527,738 L 527,744 Z" />
+            <path class="map-island-path" d="M 480,742 L 481,747 L 478,753 L 478,759 L 474,761 L 473,758 L 474,752 L 476,746 L 481,743 L 478,749 L 477,755 L 476,760 L 475,757 L 476,751 L 477,745 L 479,747 L 478,745 Z" />
+            <path class="map-island-path" d="M 502,742 L 505,744 L 502,750 L 497,754 L 491,758 L 486,764 L 484,770 Z" />
+            <path class="map-island-path" d="M 502,744 L 503,743 L 503,747 L 499,753 L 493,756 L 487,761 L 484,767 L 482,768 L 483,762 L 488,756 L 494,750 L 500,748 L 501,748 L 497,752 L 491,756 L 486,762 L 483,768 Z" />
+            <path class="map-island-path" d="M 412,746 L 413,747 L 414,752 L 412,758 Z" />
+            <path class="map-island-path" d="M 548,748 L 544,754 L 542,760 L 542,766 L 547,764 L 546,758 Z" />
+            <path class="map-island-path" d="M 542,754 L 542,759 L 541,765 L 545,767 L 549,761 Z" />
+            <path class="map-island-path" d="M 542,756 L 541,759 L 540,765 L 544,769 L 549,763 Z" />
+            <path class="map-island-path" d="M 550,762 L 547,768 L 541,770 Z" />
+            <path class="map-island-path" d="M 530,764 L 536,764 L 538,770 L 538,776 L 535,782 L 529,784 L 524,786 L 521,792 L 517,789 L 517,783 L 519,778 L 522,772 L 526,766 L 532,764 L 537,767 L 538,773 L 536,779 L 531,783 L 525,783 L 523,789 L 518,790 L 518,784 L 520,778 L 523,772 L 527,767 L 533,765 L 536,770 L 536,776 L 533,781 L 527,782 L 522,786 L 519,790 Z" />
+            <path class="map-island-path" d="M 526,768 L 529,769 L 528,775 L 525,781 L 523,781 L 523,775 Z" />
+            <path class="map-island-path" d="M 380,770 L 384,773 L 386,779 L 382,781 L 380,777 L 379,771 L 384,774 L 385,780 L 382,777 L 381,778 L 380,772 L 382,776 Z" />
+            <path class="map-island-path" d="M 550,772 L 554,774 L 553,780 L 550,786 L 544,788 L 542,783 L 544,777 L 550,773 L 553,776 L 551,782 L 547,787 L 543,784 L 545,778 L 550,774 L 552,778 L 549,784 L 544,786 L 545,780 L 549,774 Z" />
+            <path class="map-island-path" d="M 564,772 L 569,773 L 567,779 L 561,783 L 560,777 L 563,772 L 568,774 L 565,780 L 560,780 L 562,775 L 561,778 L 565,778 Z" />
+            <path class="map-island-path" d="M 344,776 L 345,782 L 346,788 L 347,794 L 348,800 L 345,794 L 344,788 L 344,782 Z" />
+            <path class="map-island-path" d="M 424,782 L 426,787 L 423,787 Z" />
+            <path class="map-island-path" d="M 422,784 L 425,785 L 422,787 L 421,785 L 423,785 Z" />
+            <path class="map-island-path" d="M 720,784 L 722,786 L 722,792 L 722,798 L 719,802 L 720,796 L 720,790 L 721,784 Z" />
+            <path class="map-island-path" d="M 416,798 L 417,799 L 416,802 L 416,801 Z" />
+            <path class="map-island-path" d="M 720,800 L 721,794 L 721,788 Z" />
+            <path class="map-island-path" d="M 744,814 L 747,817 L 746,823 L 745,829 L 741,829 L 739,827 L 740,821 L 737,815 Z" />
+            <path class="map-island-path" d="M 746,814 L 746,820 L 744,826 L 741,828 L 741,824 L 740,818 L 741,817 L 745,816 L 744,822 Z" />
+            </g>
+
+            <!-- 1. Rangpur Central Command Hub (YELLOW animated beacon, NO TEXT label on map as instructed) -->
+            <g class="map-pin active-hub" data-city="rangpur" transform="translate(345, 195)">
+              <circle r="26" class="hub-beacon-ring"></circle>
+              <circle r="12" class="pin-hub-center"></circle>
+            </g>
+
+                        <!-- Highlighted Project Districts (Vibrant Glowing Blue + Clean High-Legibility Bilingual Labels) -->
+            <!-- 2. Kurigram District -->
+            <g class="map-pin highlighted" data-city="kurigram" transform="translate(430, 175)">
+              <circle r="9"></circle>
+              <text x="14" y="5" text-anchor="start" data-i18n="map_pin_kurigram">Kurigram • কুড়িগ্রাম</text>
+            </g>
+
+            <!-- 3. Dinajpur District -->
+            <g class="map-pin highlighted" data-city="dinajpur" transform="translate(255, 210)">
+              <circle r="9"></circle>
+              <text x="-14" y="5" text-anchor="end" data-i18n="map_pin_dinajpur">Dinajpur • দিনাজপুর</text>
+            </g>
+
+            <!-- 4. Bogura District -->
+            <g class="map-pin highlighted" data-city="bogura" transform="translate(360, 330)">
+              <circle r="9"></circle>
+              <text x="14" y="5" text-anchor="start" data-i18n="map_pin_bogura">Bogura • বগুড়া</text>
+            </g>
+
+            <!-- 5. Kushtia District (Gorai Corridor) -->
+            <g class="map-pin highlighted" data-city="kushtia" transform="translate(320, 475)">
+              <circle r="9.5"></circle>
+              <text x="-14" y="5" text-anchor="end" data-i18n="map_pin_kushtia">Kushtia • কুষ্টিয়া</text>
+            </g>
+
+            <!-- 6. Dhaka Secretariat Complex -->
+            <g class="map-pin highlighted" data-city="dhaka" transform="translate(470, 510)">
+              <circle r="9.5"></circle>
+              <text x="14" y="5" text-anchor="start" data-i18n="map_pin_dhaka">Dhaka • ঢাকা</text>
+            </g>
+
+            <!-- 7. Jashore District -->
+            <g class="map-pin highlighted" data-city="jashore" transform="translate(335, 590)">
+              <circle r="9"></circle>
+              <text x="-14" y="5" text-anchor="end" data-i18n="map_pin_jashore">Jashore • যশোর</text>
+            </g>
+
+            <!-- 8. Barishal Division -->
+            <g class="map-pin highlighted" data-city="barishal" transform="translate(470, 680)">
+              <circle r="9.5"></circle>
+              <text x="14" y="5" text-anchor="start" data-i18n="map_pin_barishal">Barishal • বরিশাল</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="gis-dossier-panel">
+          <h3 id="dossierCityName" data-i18n="dossier_city_init">রংপুর (সেন্ট্রাল হাব)</h3>
+          <div class="zone" id="dossierZone" data-i18n="dossier_zone_init">রংপুর এলজিইডি সদর ও তিস্তা-ঘাঘট অববাহিকা</div>
+
+          <div class="dossier-grid">
+            <div class="dossier-item">
+              <div class="lbl" data-i18n="dossier_lbl_bridges">সার্ভে আওতাধীন সেতু:</div>
+              <div class="val" id="dossierBridgesVal" data-i18n="dossier_bridges_init">১২+ আঞ্চলিক সেতু ও কালভার্ট</div>
+            </div>
+            <div class="dossier-item">
+              <div class="lbl" data-i18n="dossier_lbl_period">পরিদর্শন সময়কাল:</div>
+              <div class="val" id="dossierDateVal" data-i18n="dossier_date_init">২০২৫ - ২০২৬ (চলমান)</div>
+            </div>
+            <div class="dossier-item">
+              <div class="lbl" data-i18n="dossier_lbl_drone">নিয়োজিত ড্রোন:</div>
+              <div class="val" id="dossierDroneVal">DJI Mavic 4 Pro (100MP Optical)</div>
+            </div>
+            <div class="dossier-item">
+              <div class="lbl" data-i18n="dossier_lbl_status">মিশন স্ট্যাটাস:</div>
+              <div class="val" id="dossierStatusVal" data-i18n="dossier_status_init" style="color:var(--primary);">রংপুর সেন্ট্রাল হাব • শীর্ষ অগ্রাধিকার মিশন</div>
+            </div>
+          </div>
+
+          <p class="dossier-notes" id="dossierNotes" data-i18n="dossier_notes_init">
+            রংপুর সেন্ট্রাল কমান্ডের সরাসরি নিয়ন্ত্রণে তিস্তা ও ঘাঘট অববাহিকার নদী তীরবর্তী গ্রামীণ সড়ক, সেতু ও কালভার্টসমূহের ডিজিটাল ডাটাবেজ প্রণয়ন ও বার্ষিক স্ট্রাকচারাল হেলথ অডিট চলমান।
+          </p>
+
+          <button class="btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            <span data-i18n="dossier_cta_book">📅 এই জোনের জন্য ড্রোন পরিদর্শন বুক করুন</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PHOTO ARCHIVE & LIGHTBOX
+       ========================================================================== -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="gallery_tag">ইন্সপেকশন আর্কাইভ</span>
+        <h2 class="section-title" data-i18n="gallery_title">উচ্চক্ষমতাসম্পন্ন ছবি ও প্রজেক্ট গ্যালারি</h2>
+        <p class="section-desc" data-i18n="gallery_sub">DJI Mavic 4 Pro ক্যামেরায় সংগৃহীত ১০০০+ ছবির মধ্য থেকে নির্বাচিত শীর্ষ প্রকৌশল নমুনা (সকল ছবি এলজিইডি ও সরকারি প্রকল্পের বাস্তব কাজ)।</p>
+      </div>
+
+      <!-- 100MP Optical Verification Banner -->
+      <div style="background:rgba(245, 158, 11, 0.10); border:1.5px solid rgba(245, 158, 11, 0.35); border-radius:12px; padding:12px 24px; margin:0 auto 26px auto; max-width:760px; display:flex; align-items:center; justify-content:center; gap:12px; text-align:center; box-shadow:0 4px 20px rgba(245, 158, 11, 0.12);">
+        <span style="color:#fbbf24; font-weight:750; font-size:0.95rem; letter-spacing:0.01em;">
+          <span data-i18n="gallery_banner_raw">প্রতিটি ছবি DJI Mavic 4 Pro ১০০ মেগাপিক্সেলে ধারণকৃত (100MP Optical Raw Archive)</span>
+        </span>
+      </div>
+
+      <div class="gallery-nav">
+        <button class="filter-btn active" data-cat="all" data-i18n="cat_all">সব ছবি (সকল প্রকল্প)</button>
+        <button class="filter-btn" data-cat="pwd" data-i18n="cat_pwd">গণপূর্ত মেগা কমপ্লেক্স (PWD)</button>
+        <button class="filter-btn" data-cat="bearings" data-i18n="cat_bearings">বিয়ারিং ও পেডেস্টাল</button>
+        <button class="filter-btn" data-cat="steel_truss" data-i18n="cat_steel">স্টিল ট্রাস ও গাছেট</button>
+        <button class="filter-btn" data-cat="piers" data-i18n="cat_piers">পিয়ার ও রিভারবেড</button>
+        <button class="filter-btn" data-cat="panoramas" data-i18n="cat_panoramas">এরিয়াল প্যানোরামা</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- 1. PWD Government Iconic Mega Complex -->
+        <div class="gallery-item-card" data-cat="pwd" data-client="pwd" data-file="pwd_mega_complex.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/pwd_mega_complex.jpg" alt="গণপূর্ত অধিদপ্তর (PWD) - জাতীয় প্রশাসনিক মেগা কমপ্লেক্স" loading="lazy">
+            <span class="gallery-client-pill pwd">গণপূর্ত (PWD)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat pwd">গণপূর্ত (PWD) • PWD</span>
+            <div class="gallery-item-title">গণপূর্ত অধিদপ্তর (PWD) - জাতীয় প্রশাসনিক মেগা কমপ্লেক্স</div>
+            <div class="gallery-item-desc">আধুনিক কার্টেন গ্লাস ও স্টিল ফ্রেম স্ট্রাকচারাল ফাসাদ অডিট</div>
+          </div>
+        </div>
+
+        <!-- 2. PWD High-Rise Facade Inspection -->
+        <div class="gallery-item-card" data-cat="pwd" data-client="pwd" data-file="pwd_facade_inspection.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/pwd_facade_inspection.jpg" alt="গণপূর্ত অধিদপ্তর (PWD) - হাই-রাইজ ফাসাদ ও সিল্যান্ট পরিদর্শন" loading="lazy">
+            <span class="gallery-client-pill pwd">গণপূর্ত (PWD)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat pwd">গণপূর্ত (PWD) • PWD</span>
+            <div class="gallery-item-title">গণপূর্ত অধিদপ্তর (PWD) - হাই-রাইজ ফাসাদ ও সিল্যান্ট পরিদর্শন</div>
+            <div class="gallery-item-desc">১০০এমপি ম্যাক্রো অপটিক্যালে কার্টেন গ্লাস ব্র্যাকেট ও ওয়েদার সিল্যান্ট অডিট</div>
+          </div>
+        </div>
+
+        <!-- 3. LGED Gorai Steel Truss Bridge Panorama -->
+        <div class="gallery-item-card" data-cat="panoramas" data-client="lged" data-file="hero_gorai_panorama.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/hero_gorai_panorama.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - গড়াই স্টিল ট্রাস সেতু করিডোর" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PANORAMAS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - গড়াই স্টিল ট্রাস সেতু করিডোর</div>
+            <div class="gallery-item-desc">গড়াই নদীর সংযোগ করিডোরে দীর্ঘ স্প্যান স্টিল ট্রাস সেতু</div>
+          </div>
+        </div>
+
+        <!-- 4. Steel Truss Symmetry Apex -->
+        <div class="gallery-item-card" data-cat="steel_truss" data-client="lged" data-file="truss_symmetry_apex.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/truss_symmetry_apex.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - স্টিল ট্রাস অ্যাপেক্স ও প্রতিসাম্য নোড" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • STEEL TRUSS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - স্টিল ট্রাস অ্যাপেক্স ও প্রতিসাম্য নোড</div>
+            <div class="gallery-item-desc">টপ কর্ড ও ডায়াগোনাল টেনশন টাই মেম্বারের কাঠামোগত স্থিতিশীলতা</div>
+          </div>
+        </div>
+
+        <!-- 5. Truss Gusset Multi-bolt -->
+        <div class="gallery-item-card" data-cat="steel_truss" data-client="lged" data-file="truss_gusset_multibolt.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/truss_gusset_multibolt.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - মাল্টি-বোল্ট গাছেট প্লেট ও রিভেট জয়েন্ট" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • STEEL TRUSS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - মাল্টি-বোল্ট গাছেট প্লেট ও রিভেট জয়েন্ট</div>
+            <div class="gallery-item-desc">ট্রাসের সংযোগস্থলে শিয়ার স্ট্রেস ও মাইক্রো-মুভমেন্ট নিবিড় অডিট</div>
+          </div>
+        </div>
+
+        <!-- 6. Truss Rivet Detail -->
+        <div class="gallery-item-card" data-cat="steel_truss" data-client="lged" data-file="truss_rivet_detail.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/truss_rivet_detail.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ম্যাক্রো রিভেট হেড ও জং বিশ্লেষণ" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • STEEL TRUSS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ম্যাক্রো রিভেট হেড ও জং বিশ্লেষণ</div>
+            <div class="gallery-item-desc">১০০ মেগাপিক্সেল অপটিক্যালে ক্ষুদ্রাতিক্ষুদ্র মরিচা ও ক্ষয় চিহ্নিতকরণ</div>
+          </div>
+        </div>
+
+        <!-- 7. Truss Top Chord -->
+        <div class="gallery-item-card" data-cat="steel_truss" data-client="lged" data-file="truss_top_chord.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/truss_top_chord.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - টপ কর্ড নোড ও উইন্ড ব্রেসিং" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • STEEL TRUSS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - টপ কর্ড নোড ও উইন্ড ব্রেসিং</div>
+            <div class="gallery-item-desc">পার্শ্বীয় দোলন প্রতিরোধক সংযোগ ও কর্ড অ্যালাইনমেন্ট</div>
+          </div>
+        </div>
+
+        <!-- 8. Truss Diagonal Member -->
+        <div class="gallery-item-card" data-cat="steel_truss" data-client="lged" data-file="truss_diagonal_member.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/truss_diagonal_member.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ডায়াগোনাল টেনশন মেম্বার ও ট্রাস ওয়েব" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • STEEL TRUSS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ডায়াগোনাল টেনশন মেম্বার ও ট্রাস ওয়েব</div>
+            <div class="gallery-item-desc">ভারবহন ক্ষমতা ও টান মেম্বারের মাইক্রো-ডিফ্লেকশন বিশ্লেষণ</div>
+          </div>
+        </div>
+
+        <!-- 9. Gorai Aerial Approach -->
+        <div class="gallery-item-card" data-cat="panoramas" data-client="lged" data-file="gorai_aerial_approach.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/gorai_aerial_approach.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - গড়াই এপ্রোচ ও রিভারবেড করিডোর" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PANORAMAS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - গড়াই এপ্রোচ ও রিভারবেড করিডোর</div>
+            <div class="gallery-item-desc">এপ্রোচ স্লিপার ব্যালেন্স ও ওয়াটারওয়ে ব্যাথিমেট্রি পর্যবেক্ষণ</div>
+          </div>
+        </div>
+
+        <!-- 10. Gorai Traffic Corridor -->
+        <div class="gallery-item-card" data-cat="panoramas" data-client="lged" data-file="gorai_traffic_corridor.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/gorai_traffic_corridor.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - কুষ্টিয়া গড়াই সংযোগ করিডোর" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PANORAMAS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - কুষ্টিয়া গড়াই সংযোগ করিডোর</div>
+            <div class="gallery-item-desc">হাইওয়ে ও আঞ্চলিক সেতু করিডোরের যৌথ এরিয়াল ড্রোন ভিউ</div>
+          </div>
+        </div>
+
+        <!-- 11. Barishal Girder Approach -->
+        <div class="gallery-item-card" data-cat="panoramas" data-client="lged" data-file="barishal_girder_approach.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/barishal_girder_approach.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - বরিশাল রিভার ক্রসিং গার্ডার সেতু" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PANORAMAS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - বরিশাল রিভার ক্রসিং গার্ডার সেতু</div>
+            <div class="gallery-item-desc">নদী তীরবর্তী এপ্রোচ ও প্রিস্ট্রেসড কংক্রিট গার্ডার স্প্যান</div>
+          </div>
+        </div>
+
+        <!-- 12. Girder Soffit Five Bay -->
+        <div class="gallery-item-card" data-cat="piers" data-client="lged" data-file="girder_soffit_five_bay.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/girder_soffit_five_bay.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ৫-বে গার্ডার সোফিট ভিউ" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PIERS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ৫-বে গার্ডার সোফিট ভিউ</div>
+            <div class="gallery-item-desc">অগম্য আন্ডার-ডেক স্প্যানে ড্রোন ক্রল ফ্লাইট অডিট</div>
+          </div>
+        </div>
+
+        <!-- 13. Girder Diaphragm Beam -->
+        <div class="gallery-item-card" data-cat="piers" data-client="lged" data-file="girder_diaphragm_beam.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/girder_diaphragm_beam.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ডায়াফ্রাম বিম ও জয়েন্ট পরিদর্শন" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PIERS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - ডায়াফ্রাম বিম ও জয়েন্ট পরিদর্শন</div>
+            <div class="gallery-item-desc">গার্ডার সংযোগকারী বিমের শিয়ার ও লোড ট্রান্সফার অডিট</div>
+          </div>
+        </div>
+
+        <!-- 14. Bearing Pot Spall -->
+        <div class="gallery-item-card" data-cat="bearings" data-client="lged" data-file="bearing_pot_spall.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/bearing_pot_spall.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - পট বিয়ারিং প্লিন্থ স্পল" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • BEARINGS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - পট বিয়ারিং প্লিন্থ স্পল</div>
+            <div class="gallery-item-desc">কংক্রিট প্লিন্থের ক্ষয় ও অ্যাঙ্কর বোল্টের মরচে চিহ্নিতকরণ</div>
+          </div>
+        </div>
+
+        <!-- 15. Bearing Ozone Cracking -->
+        <div class="gallery-item-card" data-cat="bearings" data-client="lged" data-file="bearing_ozone_cracking.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/bearing_ozone_cracking.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - নিওপ্রিন ওজোন ক্র্যাক" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • BEARINGS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - নিওপ্রিন ওজোন ক্র্যাক</div>
+            <div class="gallery-item-desc">ভারবহনকারী রাবার প্যাডের সূক্ষ্ম অনুভূমিক ফাটল</div>
+          </div>
+        </div>
+
+        <!-- 16. Bearing Underdeck Seat -->
+        <div class="gallery-item-card" data-cat="bearings" data-client="lged" data-file="bearing_underdeck_seat.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/bearing_underdeck_seat.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - আন্ডার-ডেক বিয়ারিং সমতলতা" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • BEARINGS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - আন্ডার-ডেক বিয়ারিং সমতলতা</div>
+            <div class="gallery-item-desc">গার্ডার ও পিয়ার ক্যাপের মধ্যকার সমান্তরালতা পরিমাপ</div>
+          </div>
+        </div>
+
+        <!-- 17. Barishal Pier Shaft -->
+        <div class="gallery-item-card" data-cat="piers" data-client="lged" data-file="barishal_pier_shaft.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/barishal_pier_shaft.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - পিয়ার ক্যাপ ও সিটিং" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PIERS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - পিয়ার ক্যাপ ও সিটিং</div>
+            <div class="gallery-item-desc">ডিফারেনশিয়াল সিটিং ও ড্রেনেজ ওয়াটার লিচিং পর্যবেক্ষণ</div>
+          </div>
+        </div>
+
+        <!-- 18. Barishal River Piers -->
+        <div class="gallery-item-card" data-cat="piers" data-client="lged" data-file="barishal_river_piers.jpg">
+          <div class="gallery-item-thumb">
+            <img src="assets/thumbnails/barishal_river_piers.jpg" alt="স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - রিভার পিয়ার স্কাউরিং জোন" loading="lazy">
+            <span class="gallery-client-pill lged">এলজিইডি (LGED)</span>
+          </div>
+          <div class="gallery-item-body">
+            <span class="gallery-item-cat lged">এলজিইডি (LGED) • PIERS</span>
+            <div class="gallery-item-title">স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED) - রিভার পিয়ার স্কাউরিং জোন</div>
+            <div class="gallery-item-desc">নদীর স্রোতের প্রভাব ও তলদেশের পলি ক্ষয় নিরূপণ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightboxModal">
+    <div class="lightbox-modal-content">
+      <button class="lightbox-close" id="lightboxCloseBtn">✕</button>
+      <div class="lightbox-view-area">
+        <img src="" alt="Full View" id="lightboxImg">
+      </div>
+      <div class="lightbox-caption-bar">
+        <div>
+          <h4 id="lightboxTitle" style="color:#fff; font-size:1.15rem; margin-bottom:4px;"></h4>
+          <p id="lightboxDesc" style="color:var(--text-body); font-size:0.88rem;"></p>
+        </div>
+        <div id="lightboxExif" style="color:var(--accent-gold); font-size:0.78rem; font-family:monospace;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       BIAMS DATABASE & SMART INFRASTRUCTURE DEMO
+       ========================================================================== -->
+  <section class="section" id="biams">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="biams_tag">ডিজিটাল উদ্ভাবন</span>
+        <h2 class="section-title" data-i18n="biams_title">ওয়েব ও ব্রিজ অ্যাসেট ম্যানেজমেন্ট সিস্টেম (BIAMS)</h2>
+        <p class="section-desc" data-i18n="biams_sub">আমরা কেবল ভিডিও ধারণ করি না; সরকারি দপ্তরের জন্য কাস্টমাইজড ডিজিটাল পোর্টাল ও ডাটাবেজ সিস্টেমও তৈরি করি।</p>
+      </div>
+
+      <div class="biams-card">
+        <div class="biams-header-bar">
+          <div>
+            <h4 style="font-size:1.1rem; color:var(--text-white);" data-i18n="biams_card_title">সেতু পরিদর্শন সেন্ট্রাল ডাটাবেজ ড্যাশবোর্ড</h4>
+            <p style="font-size:0.82rem; color:var(--text-muted);" data-i18n="biams_card_sub">লাইভ ফিল্টার, সার্চ ও স্ট্রাকচারাল হেলথ ইনডেক্স (SHI)</p>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center;">
+            <input type="text" id="biamsSearchInput" class="biams-input" placeholder="সেতুর নাম বা জেলা দিয়ে খুঁজুন..." data-i18n-ph="biams_search_ph">
+            <button class="btn-ghost" id="biamsPrintBtn" style="padding:10px 18px; font-size:0.85rem;">
+              <span data-i18n="biams_print_btn">🖨️ প্রিন্ট / PDF রিপোর্ট</span>
+            </button>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-bottom:8px;">
+          <span style="font-size:0.75rem; color:var(--accent-cyan); font-weight:600; background:rgba(56, 189, 248, 0.08); padding:3px 10px; border-radius:999px; border:1px solid rgba(56, 189, 248, 0.2);">
+            <span data-i18n="biams_swipe_hint">↔ সম্পূর্ণ টেবিল দেখতে ডানে-বামে স্ক্রোল করুন (Swipe Table)</span>
+          </span>
+        </div>
+
+        <div class="biams-table-wrap">
+          <table class="clean-table">
+            <thead>
+              <tr>
+                <th data-i18n="biams_th_id">অ্যাসেট আইডি</th>
+                <th data-i18n="biams_th_name">সেতুর বিবরণ</th>
+                <th data-i18n="biams_th_dist">বিভাগ / জেলা</th>
+                <th data-i18n="biams_th_type">কাঠামো ধরন</th>
+                <th data-i18n="biams_th_spans">স্প্যান সংখ্যা</th>
+                <th data-i18n="biams_th_audit">সর্বশেষ অডিট</th>
+                <th data-i18n="biams_th_shi">হেলথ ইনডেক্স</th>
+                <th data-i18n="biams_th_rec">প্রকৌশল সুপারিশ</th>
+              </tr>
+            </thead>
+            <tbody id="biamsTableBody">
+              <!-- 1. Kushtia (Aug 20, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">BR-KUS-TR-001</strong></td>
+                <td><strong>কুষ্টিয়া গড়াই স্টিল ট্রাস রেলসেতু (স্প্যান ১-৪)</strong></td>
+                <td>কুষ্টিয়া</td>
+                <td>Bangladesh Railway Steel Truss</td>
+                <td>4 Spans</td>
+                <td>2026-08-20</td>
+                <td><span class="badge-status fair">76%</span></td>
+                <td>টপ কর্ড রিভেট ও ভাইব্রেশন ড্যাম্পার চেক</td>
+              </tr>
+              <!-- 2. Kushtia (Aug 22, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">BR-KUS-TR-002</strong></td>
+                <td><strong>কুষ্টিয়া গড়াই ট্রাস রেলসেতু (স্লিপার ও ট্র্যাক করিডোর)</strong></td>
+                <td>কুষ্টিয়া</td>
+                <td>Bangladesh Railway Steel Truss</td>
+                <td>5 Spans</td>
+                <td>2026-08-22</td>
+                <td><span class="badge-status fair">79%</span></td>
+                <td>পট বিয়ারিং প্লিন্থ ও গাছেট প্লেট ক্ষয় নিরাময়</td>
+              </tr>
+              <!-- 3. Kushtia (Aug 23, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">LGED-KUS-RC-003</strong></td>
+                <td><strong>কুষ্টিয়া হরিপুর সংযোগ আরসিসি সেতু</strong></td>
+                <td>কুষ্টিয়া</td>
+                <td>LGED RCC T-Beam Girder</td>
+                <td>3 Spans</td>
+                <td>2026-08-23</td>
+                <td><span class="badge-status good">88%</span></td>
+                <td>ডেক ড্রেনেজ পাইপ ও প্যারাপেট মেরামত</td>
+              </tr>
+              <!-- 4. Barishal (Aug 24, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">LGED-BAR-PC-001</strong></td>
+                <td><strong>বরিশাল কীর্তনখোলা ডিভিশনাল গার্ডার সেতু (স্প্যান ১-৪)</strong></td>
+                <td>বরিশাল</td>
+                <td>LGED Prestressed Concrete</td>
+                <td>4 Spans</td>
+                <td>2026-08-24</td>
+                <td><span class="badge-status attention">62%</span></td>
+                <td>আন্ডার-ডেক ডায়াফ্রাম বিম ও রিবার মরিচাকরণ নিরাময়</td>
+              </tr>
+              <!-- 5. Barishal (Aug 25, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">LGED-BAR-PC-002</strong></td>
+                <td><strong>বরিশাল ডিভিশনাল গার্ডার সেতু (বিয়ারিং ও পিয়ার অডিট)</strong></td>
+                <td>বরিশাল</td>
+                <td>LGED Prestressed Concrete</td>
+                <td>4 Spans</td>
+                <td>2026-08-25</td>
+                <td><span class="badge-status attention">68%</span></td>
+                <td>ইলাস্টোমেরিক বিয়ারিং প্যাড ও পিয়ার ক্যাপ সংস্কার</td>
+              </tr>
+              <!-- 6. Dhaka (Mar 15, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">PWD-DHK-ADM-005</strong></td>
+                <td><strong>জাতীয় সচিবালয় মেগা প্রশাসনিক কমপ্লেক্স</strong></td>
+                <td>ঢাকা</td>
+                <td>PWD High-Rise Steel & Glass</td>
+                <td>18 Fl.</td>
+                <td>2026-03-15</td>
+                <td><span class="badge-status good">91%</span></td>
+                <td>কার্টেন গ্লাস ওয়েদার সিলিং ও ব্র্যাকেট অডিট</td>
+              </tr>
+              <!-- 7. Rangpur (Jan 18, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">LGED-RNG-BR-001</strong></td>
+                <td><strong>রংপুর তিস্তা সংযোগ গার্ডার সেতু</strong></td>
+                <td>রংপুর</td>
+                <td>LGED Prestressed Concrete</td>
+                <td>7 Spans</td>
+                <td>2026-01-18</td>
+                <td><span class="badge-status good">93%</span></td>
+                <td>সেন্ট্রাল হাব রুটিন পর্যবেক্ষণ বহাল</td>
+              </tr>
+              <!-- 8. Kurigram (Nov 12, 2025) -->
+              <tr>
+                <td><strong style="color:var(--primary);">LGED-KUR-BL-014</strong></td>
+                <td><strong>কুড়িগ্রাম ধরলা সংযোগ বেইলি ব্রিজ</strong></td>
+                <td>কুড়িগ্রাম</td>
+                <td>LGED Steel Bailey / Timber</td>
+                <td>4 Spans</td>
+                <td>2025-11-12</td>
+                <td><span class="badge-status good">85%</span></td>
+                <td>বন্যা পরবর্তী রিভারবেড স্কয়ার অডিট</td>
+              </tr>
+              <!-- 9. Dhaka (Aug 14, 2025) -->
+              <tr>
+                <td><strong style="color:var(--primary);">PWD-DHK-FL-021</strong></td>
+                <td><strong>ঢাকা সেন্ট্রাল সচিবালয় ওভারপাস করিডোর</strong></td>
+                <td>ঢাকা</td>
+                <td>PWD Prestressed Box Girder</td>
+                <td>12 Spans</td>
+                <td>2025-08-14</td>
+                <td><span class="badge-status good">94%</span></td>
+                <td>এক্সপানশন জয়েন্ট ও ড্রেনেজ চ্যানেল রক্ষণাবেক্ষণ</td>
+              </tr>
+              <!-- 10. Dinajpur (May 20, 2025) -->
+              <tr>
+                <td><strong style="color:var(--primary);">LGED-DIN-RC-007</strong></td>
+                <td><strong>দিনাজপুর আত্রাই রিভার আরসিসি গার্ডার সেতু</strong></td>
+                <td>দিনাজপুর</td>
+                <td>LGED RCC T-Beam Girder</td>
+                <td>5 Spans</td>
+                <td>2025-05-20</td>
+                <td><span class="badge-status fair">74%</span></td>
+                <td>পিয়ার ক্যাপ ওয়াটারপ্রুফিং ও রেলিং রঙ</td>
+              </tr>
+              <!-- 11. Bogura (Sep 28, 2025) -->
+              <tr>
+                <td><strong style="color:var(--primary);">RHD-BOG-BG-011</strong></td>
+                <td><strong>বগুড়া করতোয়া মহাসড়ক বক্স গার্ডার সেতু</strong></td>
+                <td>বগুড়া</td>
+                <td>RHD Prestressed Box Girder</td>
+                <td>6 Spans</td>
+                <td>2025-09-28</td>
+                <td><span class="badge-status good">89%</span></td>
+                <td>এপ্রোচ স্ল্যাব সেটলমেন্ট ও জয়েন্ট অডিট</td>
+              </tr>
+              <!-- 12. Jashore (Feb 10, 2026) -->
+              <tr>
+                <td><strong style="color:var(--primary);">LGED-JSH-PC-008</strong></td>
+                <td><strong>যশোর কপোতাক্ষ ডিভিশনাল গার্ডার সেতু</strong></td>
+                <td>যশোর</td>
+                <td>LGED Prestressed Concrete</td>
+                <td>6 Spans</td>
+                <td>2026-02-10</td>
+                <td><span class="badge-status fair">81%</span></td>
+                <td>পিয়ার কলাম কার্বনেশন ও উইপ-হোল পরিষ্কার</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CIVIL AVIATION (CAAB) CERTIFICATION & FLIGHT SAFETY PROTOCOLS (#safety)
+       ========================================================================== -->
+  <section class="section" id="safety">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="safety_badge">সিভিল এভিয়েশন কমপ্লায়েন্স ও এভিয়েশন সেফটি</span>
+        <h2 class="section-title" data-i18n="safety_title">পাইলট সার্টিফিকেশন, ফ্লাইট সেফটি ও সরকারি কমপ্লায়েন্স</h2>
+        <p class="section-desc" data-i18n="safety_desc">বেসামরিক বিমান চলাচল কর্তৃপক্ষ (CAAB) ও প্রতিরক্ষা মন্ত্রণালয়ের বিধিমালা অনুযায়ী ১০০% অনুমোদিত আকাশসীমা ও সাব-সেন্টিমিটার নিরাপত্তা নিশ্চয়তা</p>
+      </div>
+
+      <!-- Official CAAB License Banner -->
+      <div class="caab-banner-card">
+        <div class="caab-banner-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="caab-banner-content">
+          <div class="caab-badge-row">
+            <span class="caab-chip" data-i18n="caab_chip">CAAB RPAS CERTIFIED</span>
+            <span class="caab-verif" data-i18n="caab_verif">✓ সরকারি ছাড়পত্র অনুমোদিত</span>
+          </div>
+          <h3 data-i18n="caab_title">বেসামরিক বিমান চলাচল কর্তৃপক্ষ (CAAB) লাইসেন্সধারী ড্রোন অপারেশন টিম</h3>
+          <p data-i18n="caab_body">আমাদের সকল ড্রোন পাইলট CAAB কর্তৃক সার্টিফাইড এবং মেগা অবকাঠামো অডিটের জন্য প্রতিরক্ষা মন্ত্রণালয়, স্থানীয় প্রশাসন ও সিভিল এভিয়েশন থেকে বিধি মোতাবেক পূর্ণাঙ্গ আকাশসীমা ছাড়পত্র গ্রহণপূর্বক প্রতিটি এরিয়াল মিশন পরিচালিত হয়।</p>
+        </div>
+      </div>
+
+      <!-- 8 Core Safety Protocol & Enterprise Pillars -->
+      <div class="safety-grid">
+        <div class="safety-card">
+          <div class="safety-card-icon">👨‍✈️</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p1_title">CAAB সার্টিফাইড RPAS রিমোট পাইলট উইং</h4>
+            <span class="safety-pill" data-i18n="safe_p1_tag">Licensed Airmen</span>
+          </div>
+          <p data-i18n="safe_p1_desc">আমাদের প্রতিটি ড্রোন ফ্লাইট পাইলট বেসামরিক বিমান চলাচল কর্তৃপক্ষ (CAAB) কর্তৃক লাইসেন্সপ্রাপ্ত ও প্রতিরক্ষা মন্ত্রণালয় থেকে ছাড়পত্রপ্রাপ্ত।</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="safety-card-icon">⚡</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p2_title">রিডানড্যান্ট ফেইল-সেফ ও স্মার্ট অটো RTH</h4>
+            <span class="safety-pill" data-i18n="safe_p2_tag">Dual IMU + RTL</span>
+          </div>
+          <p data-i18n="safe_p2_desc">ডুয়াল আইএমইউ, ট্রিপল কম্পাস এবং সিগন্যাল লস বা ব্যাটারি ২৫% নামলে মিলিমিটার নির্ভুলতায় স্বয়ংক্রিয় রিটার্ন-টু-হোম (Smart RTH)।</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="safety-card-icon">🛡️</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p3_title">৩৬০° অমনি-ডিরেকশনাল অবস্ট্যাকল সেন্সিং</h4>
+            <span class="safety-pill" data-i18n="safe_p3_tag">APAS 5.0 Radar</span>
+          </div>
+          <p data-i18n="safe_p3_desc">ব্রিজের ঝুলন্ত তার, গার্ডার ট্রাস বা নদী অববাহিকার গাছের ডালপালার সাথে সংঘর্ষ এড়াতে মিলিমিটার-ওয়েভ রাডার ও বাইনোকুলার ভিশন ১৫ মিটার দূর থেকেই স্বয়ংক্রিয়ভাবে বাধা এড়িয়ে যায়।</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="safety-card-icon">🚆</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p4_title">জিও-ফেন্সিং ও সক্রিয় রেল/হাইওয়ে সেফটি করিডোর</h4>
+            <span class="safety-pill" data-i18n="safe_p4_tag">100% Non-Invasive</span>
+          </div>
+          <p data-i18n="safe_p4_desc">ভার্চুয়াল ৩ডি জিও-ফেন্সিং সক্রিয় ট্রেন লাইন ও হাইওয়ে ট্রাফিকের ক্লিয়ারেন্স সীমানায় ড্রোনের অনুপ্রবেশ সম্পূর্ণ আটকে রাখে, ফলে যানবাহন চলাচল ১০০% স্বাভাবিক থাকে।</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="safety-card-icon">📍</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p5_title">ডুয়াল-ফ্রিকোয়েন্সি RTK ও ১২ মি./সে. বায়ু সহনশীলতা</h4>
+            <span class="safety-pill" data-i18n="safe_p5_tag">±0.8cm Precision</span>
+          </div>
+          <p data-i18n="safe_p5_desc">নদীর তীব্র বাতাস ও আর্দ্রতায় রিয়েল-টাইম কাইনেম্যাটিক্স (RTK-GNSS) নেটওয়ার্কের সাহায্যে মাত্র ±০.৮ সেমি পজিশন নির্ভুলতায় ড্রোন স্থির রেখে সাব-মিলিমিটার ফটো স্ক্যান সম্পন্ন হয়।</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="safety-card-icon">🔐</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p6_title">এন্টারপ্রাইজ ডেটা সিকিউরিটি ও ক্লাউড এনক্রিপশন</h4>
+            <span class="safety-pill" data-i18n="safe_p6_tag">Gov CII Security</span>
+          </div>
+          <p data-i18n="safe_p6_desc">জাতীয় গুরুত্বপূর্ণ মেগা অবকাঠামোর ডেটা সামরিক গ্রেডের AES-256 বিট এনক্রিপশন, রোল-বেসড অ্যাক্সেস কন্ট্রোল (RBAC) ও সরকারি গোপনীয়তা বিধি মোতাবেক সংরক্ষিত ও হস্তান্তর করা হয়।</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="safety-card-icon">🚨</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p7_title">দুর্যোগ ব্যবস্থাপনা ও ২৪-৪৮ ঘণ্টায় জরুরি রেসপন্স</h4>
+            <span class="safety-pill" data-i18n="safe_p7_tag">Disaster Rapid Response</span>
+          </div>
+          <p data-i18n="safe_p7_desc">বন্যা, ভূমিকম্প বা নদীভাঙন পরবর্তী ক্ষতিগ্রস্ত সেতু ও সড়কের দ্রুত স্ট্রাকচারাল হেলথ মূল্যায়নে রংপুর হাব থেকে ২৪-৪৮ ঘণ্টার মধ্যে অগ্রাধিকার ভিত্তিতে জরুরি ড্রোন টিম মোতায়েন করা হয়।</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="safety-card-icon">📊</div>
+          <div class="safety-card-header">
+            <h4 data-i18n="safe_p8_title">স্বয়ংক্রিয় BIAMS PDF ও সরকারি ওপেন-জিআইএস</h4>
+            <span class="safety-pill" data-i18n="safe_p8_tag">Automated PDF Export</span>
+          </div>
+          <p data-i18n="safe_p8_desc">এক ক্লিকে স্বয়ংক্রিয় প্রিন্ট-রেডি এক্সিকিউটিভ PDF অডিট রিপোর্ট জেনারেশন এবং RHD BMMS ও LGED GIS ডেটাবেজে সরাসরি ইম্পোর্টের পূর্ণ সুবিধা।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       FREQUENTLY ASKED QUESTIONS (FAQ) SECTION (#faqs)
+       ========================================================================== -->
+  <section class="section" id="faqs">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="faq_badge">সচরাচর জিজ্ঞাসা</span>
+        <h2 class="section-title" data-i18n="faq_title">প্রায় জিজ্ঞাসিত প্রশ্নাবলী (FAQ)</h2>
+        <p class="section-desc" data-i18n="faq_desc">ড্রোন পরিদর্শন, সরকারি কমপ্লায়েন্স ও কারিগরি ডেলিভারি সম্পর্কে প্রকৌশলী ও ক্লায়েন্টদের সাধারণ প্রশ্নের উত্তর</p>
+      </div>
+
+      <div class="faq-accordion-wrap">
+        <!-- FAQ 1 (Traffic Disruption) -->
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span class="faq-q-text" data-i18n="faq_q1">১. ড্রোন ইন্সপেকশনের জন্য কি সড়ক বা রেলপথে যান চলাচল সাময়িক বন্ধ রাখতে হয়?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a1">না, কখনোই নয় (০% ট্রাফিক ব্যাঘাত)। আমাদের ড্রোন অপারেশন সম্পূর্ণ নন-ইনভেসিভ এবং নন-ডিসরাপ্টিভ। ব্রিজের উপর গাড়ি, পথচারী বা ট্রেন চলাচল ১০০% সচল রেখেই নিরাপদ দূরত্ব ও উচ্চতা বজায় রেখে উচ্চ-ক্ষমতার অপটিক্যাল জুম সেন্সরের সাহায্যে পরিদর্শন সম্পন্ন করা হয়।</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 (Defect Precision) -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text" data-i18n="faq_q2">২. CineCraft-এর ড্রোন সেন্সরে ঠিক কী মাত্রার স্ট্রাকচারাল ডিফেক্ট বা ফাটল শনাক্ত করা যায়?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a2">আমাদের ব্যবহৃত DJI Mavic 4 Pro এবং Matrice প্ল্যাটফর্মের ১০০ মেগাপিক্সেল অপটিক্যাল সেন্সরের মাধ্যমে সাব-মিলিমিটার লেভেলে কংক্রিটের ০.১ মিমি সূক্ষ্ম হেয়ারলাইন ক্র্যাক, রিবারের মরিচাজনিত ক্ষয় ও স্প্যালিং, নিওপ্রিন বিয়ারিং প্যাডের বিকৃতি/ওজোন ক্র্যাক, ড্রেনেজ পাইপলাইন ও এক্সপানশন জয়েন্টের অবক্ষয় এবং রিভারবেড স্কাওয়ারিং অত্যন্ত নিখুঁতভাবে শনাক্ত ও পরিমাপ করা হয়।</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 (Span Inspection Duration) -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text" data-i18n="faq_q3">৩. একটি স্ট্যান্ডার্ড ব্রিজের প্রতি স্প্যান (Span) ইন্সপেকশন করতে সাধারণত কত সময় লাগে?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a3">একটি সাধারণ ব্রিজের প্রতি স্প্যান (Span) সম্পূর্ণ স্ক্যান ও ৩ডি ম্যাপিং করতে মাত্র ১৫ থেকে ২০ মিনিট সময় লাগে। ফলে প্রথাগত পদ্ধতিতে যেখানে কয়েক সপ্তাহ লেগে যেত, ড্রোন প্রযুক্তির মাধ্যমে মাত্র ১ দিনে একটি দীর্ঘ গার্ডার বা ট্রাস সেতুর সকল পিয়ার, বিয়ারিং ও ডেক সোফিট নিখুঁতভাবে অডিট করা সম্ভব।</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 (Data Delivery Formats & BIAMS) -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text" data-i18n="faq_q4">৪. সরকারি দপ্তরসমূহের কাছে ড্রোন ইন্সপেকশন ডেটা কীভাবে ডেলিভারি বা হস্তান্তর করা হয়?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a4">আমরা সরবরাহ করি: (১) এক্সপোর্টেবল ক্লাউড BIAMS ওয়েব পোর্টাল ও সার্চযোগ্য ডেটাবেজ, (২) জিও-ট্যাগযুক্ত সাব-মিলিমিটার ৪কে ও আল্ট্রা-এইচডি ইমেজ/ভিডিও আর্কাইভ, এবং (৩) সরকারি ফরমেটে তাৎক্ষণিক তৈরি স্বয়ংক্রিয় স্ট্রাকচারাল হেলথ ইনডেক্স (SHI) এক্সিকিউটিভ PDF অডিট রিপোর্ট, যা যেকোনো সভায় উপস্থাপনের জন্য প্রস্তুত।</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 (Rapid Mobilization 64 Districts) -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text" data-i18n="faq_q5">৫. দেশের যেকোনো জেলা বা প্রকল্প এলাকায় CineCraft কত দ্রুত মোবিলাইজ হতে পারে?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a5">রংপুর সেন্ট্রাল হাব থেকে আমাদের বিশেষায়িত ফ্লাইট ও ইঞ্জিনিয়ারিং টিম জরুরি রিকুইজিশন প্রাপ্তির মাত্র ২৪ থেকে ৪৮ ঘণ্টার মধ্যে বাংলাদেশের যেকোনো প্রান্তে (৬৪ জেলায়) পূর্ণাঙ্গ ইকুইপমেন্ট সহ সরাসরি সাইটে মোবিলাইজ হতে সক্ষম।</p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 (Disaster Management & GIS Integration) -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text" data-i18n="faq_q6">৬. দুর্যোগ পরবর্তী জরুরি মূল্যায়ন ও সরকারি ডাটাবেজে (যেমন RHD BMMS / LGED GIS) ডেটা যুক্ত করার ব্যবস্থা আছে কি?</span>
+            <span class="faq-chevron">▾</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a6">হ্যাঁ। বন্যা, ভূমিকম্প বা নদীভাঙন পরবর্তী জরুরি অবকাঠামো মূল্যায়নে আমরা বিশেষ অগ্রাধিকার ভিত্তিতে তাৎক্ষণিক রিপোর্ট প্রদান করি। সংগৃহীত সকল জিআইএস কো-অর্ডিনেট এবং ৩ডি পয়েন্ট ক্লাউড সরাসরি RHD BMMS, LGED GIS এবং CAD সফটওয়্যারে ইম্পোর্ট করা যায়।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & REQUISITION FORM (NATIONWIDE 64 DISTRICTS)
+       ========================================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge" data-i18n="contact_tag">যোগাযোগ ও প্রস্তাবনা</span>
+        <h2 class="section-title" data-i18n="contact_title">আপনার ডিভিশনের জন্য ইন্সপেকশন বুক করুন</h2>
+        <p class="section-desc" data-i18n="contact_sub">রংপুর সেন্ট্রাল হাব সহ দেশের যেকোনো প্রান্তের সরকারি প্রকল্পের জন্য ২৪-৪৮ ঘণ্টার মধ্যে আমরা প্রস্তুত।</p>
+      </div>
+
+      <!-- Emergency Disaster Rapid Response Protocol Banner -->
+      <div class="disaster-protocol-banner">
+        <div class="disaster-badge-row">
+          <span class="disaster-pulse-dot"></span>
+          <span class="disaster-badge" data-i18n="disaster_badge">জরুরি দুর্যোগ দ্রুত মোবিলাইজেশন প্রটোকল</span>
+          <span class="disaster-tag" data-i18n="disaster_tag">২৪-৪৮ ঘণ্টার মধ্যে অন-সাইট মোতায়েন</span>
+          <span class="disaster-tag" data-i18n="disaster_coverage">সারাদেশে ৬৪ জেলা</span>
+        </div>
+        <h3 class="disaster-title" data-i18n="disaster_title">আকস্মিক বন্যা, নদী ভাঙন ও ভূমিকম্প পরবর্তী জরুরি অবকাঠামো পরিদর্শন সেল</h3>
+        <p class="disaster-desc" data-i18n="disaster_desc">
+          ভারী বর্ষণ, পাহাড়ি ঢল, নদী গর্ভে পিয়ার স্কাউয়ারিং (River Pier Scour) বা ভূমিকম্পের পর বিপজ্জনক সেতু ও ফ্লাইওভারের কাঠামোগত স্থিতিশীলতা এবং ফাটল বিস্তৃতি যাচাইয়ে আমাদের জরুরি রেসপন্স টিম উচ্চ রেজোলিউশনের সাব-মিলিমিটার ড্রোন স্কোয়াড নিয়ে ২৪ থেকে ৪৮ ঘণ্টার মধ্যে ঘটনাস্থলে পৌঁছায়।
+        </p>
+        <div class="disaster-steps-grid">
+          <div class="disaster-step-item">
+            <span class="step-num" data-i18n="step_num_1">০১</span>
+            <div class="step-content">
+              <strong data-i18n="disaster_step1_t">তাৎক্ষণিক হটলাইন কল</strong>
+              <span data-i18n="disaster_step1_d"><a href="tel:+8801772337400" onclick="window.open('tel:+8801772337400', '_self');" style="color:#f87171; text-decoration:underline; font-weight:800;">+880 1772-337400</a> নম্বরে বিভাগীয় ইঞ্জিনিয়ারিং সেলের সরাসরি কল বা হোয়াটসঅ্যাপ নোটিফিকেশন।</span>
+            </div>
+          </div>
+          <div class="disaster-step-item">
+            <span class="step-num" data-i18n="step_num_2">০২</span>
+            <div class="step-content">
+              <strong data-i18n="disaster_step2_t">২৪-৪৮ ঘণ্টায় মোবিলাইজেশন</strong>
+              <span data-i18n="disaster_step2_d">রংপুর সেন্ট্রাল হাব ও আঞ্চলিক ইউনিট থেকে সার্টিফাইড পাইলট স্কোয়াডের ফিল্ডে পৌঁছানো।</span>
+            </div>
+          </div>
+          <div class="disaster-step-item">
+            <span class="step-num" data-i18n="step_num_3">০৩</span>
+            <div class="step-content">
+              <strong data-i18n="disaster_step3_t">জিরো-ট্রাফিক ড্রোন স্ক্যান</strong>
+              <span data-i18n="disaster_step3_d">যানবাহন চলাচল বন্ধ না করেই সাব-মিলিমিটার পিয়ার, গার্ডার ও ফাউন্ডেশন স্ক্যান সম্পন্ন।</span>
+            </div>
+          </div>
+          <div class="disaster-step-item">
+            <span class="step-num" data-i18n="step_num_4">০৪</span>
+            <div class="step-content">
+              <strong data-i18n="disaster_step4_t">তাৎক্ষণিক BIAMS অডিট</strong>
+              <span data-i18n="disaster_step4_d">একই দিনে নির্বাহী প্রকৌশলীর নিকট জিও-ট্যাগযুক্ত জরুরি স্ট্রাকচারাল হেলথ অডিট রিপোর্ট হস্তান্তর।</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-panel">
+          <div class="hero-badge" style="margin-bottom:14px;">
+            <span class="dot"></span>
+            <span data-i18n="contact_badge">সরাসরি যোগাযোগ ও রিকুইজিশন</span>
+          </div>
+          <h3 style="font-size:1.75rem; font-weight:800; color:var(--text-white); margin-bottom:6px; letter-spacing:-0.02em;">CineCraft</h3>
+          <p style="color:var(--text-body); font-weight:500; font-size:0.92rem; margin-bottom:28px;">Government Project Media & Structural Drone Inspection Specialist</p>
+
+          <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:28px;">
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div style="width:42px; height:42px; border-radius:var(--radius-sm); background:var(--bg-surface-elevated); border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">📞</div>
+              <div>
+                <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px;" data-i18n="contact_phone_lbl">সরাসরি হটলাইন কল ও হোয়াটসঅ্যাপ:</div>
+                <a href="tel:+8801772337400" onclick="window.open('tel:+8801772337400', '_self');" style="font-size:1.15rem; font-weight:800; color:#38bdf8; text-decoration:none; display:inline-block; font-family:'JetBrains Mono', monospace; letter-spacing:0.02em;">+880 1772-337400</a>
+                <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+                  <a href="tel:+8801772337400" onclick="window.open('tel:+8801772337400', '_self');" class="btn-main" style="padding:7px 16px; font-size:0.84rem; background:linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-color:#f87171; text-decoration:none; display:inline-flex; align-items:center; gap:6px; box-shadow:0 0 14px rgba(239,68,68,0.4);">
+                    <span data-i18n="btn_direct_call">📞 সরাসরি কল করুন</span>
+                  </a>
+                  <a href="https://api.whatsapp.com/send?phone=8801772337400" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="padding:7px 16px; font-size:0.84rem; text-decoration:none; display:inline-flex; align-items:center; gap:6px; border-color:rgba(16,185,129,0.5); color:#34d399;">
+                    <span data-i18n="btn_chat_wa">💬 হোয়াটসঅ্যাপে চ্যাট</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div style="width:42px; height:42px; border-radius:var(--radius-sm); background:var(--bg-surface-elevated); border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">✉️</div>
+              <div>
+                <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px;" data-i18n="contact_email_lbl">অফিসিয়াল ইমেইল:</div>
+                <a href="mailto:misaykatcinecraft@gmail.com" style="font-size:1rem; font-weight:700; color:var(--text-white); text-decoration:none;">misaykatcinecraft@gmail.com</a>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div style="width:42px; height:42px; border-radius:var(--radius-sm); background:var(--bg-surface-elevated); border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">📍</div>
+              <div>
+                <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px;" data-i18n="contact_net_lbl">অপারেশনাল নেটওয়ার্ক:</div>
+                <div style="font-size:0.95rem; font-weight:600; color:var(--text-white);" data-i18n="contact_net">রংপুর সেন্ট্রাল হাব • দেশব্যাপী ৬৪ জেলায় সরাসরি অন-সাইট সেবা</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); padding:16px; border-radius:var(--radius-md);">
+            <div style="display:flex; align-items:center; gap:8px; font-weight:700; color:var(--text-white); font-size:0.92rem; margin-bottom:4px;">
+              <span>✓</span> <span data-i18n="contact_promise_title">জরুরি সেবা প্রতিশ্রুতি (Rapid Deployment):</span>
+            </div>
+            <p style="font-size:0.86rem; color:var(--text-body); line-height:1.6;" data-i18n="contact_promise_desc">
+              বন্যা বা প্রাকৃতিক দুর্যোগে ক্ষতিগ্রস্ত জরুরি সেতু ও ভবনের দ্রুত মূল্যায়নের ক্ষেত্রে বিশেষ অগ্রাধিকার প্রদান করা হয়।
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <form id="inspectionRequisitionForm">
+            <!-- Section 1 -->
+            <div class="form-section-title" data-i18n="form_sec_org">১. সরকারি দপ্তর ও ভৌগোলিক তথ্য</div>
+            
+            <div class="form-row-2">
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_dept_lbl">দপ্তর / অধিদপ্তর (Department):</label>
+                <select class="input-field" id="reqDept" required>
+                  <option value="LGED" data-i18n="opt_dept_lged">LGED - স্থানীয় সরকার প্রকৌশল অধিদপ্তর</option>
+                  <option value="BR" data-i18n="opt_dept_br">বাংলাদেশ রেলওয়ে (Bangladesh Railway)</option>
+                  <option value="PWD" data-i18n="opt_dept_pwd">PWD - গণপূর্ত অধিদপ্তর</option>
+                  <option value="RHD" data-i18n="opt_dept_rhd">RHD - সড়ক ও জনপথ অধিদপ্তর</option>
+                  <option value="BWDB" data-i18n="opt_dept_bwdb">BWDB - বাংলাদেশ পানি উন্নয়ন বোর্ড</option>
+                  <option value="BBA" data-i18n="opt_dept_bba">বাংলাদেশ সেতু কর্তৃপক্ষ (BBA)</option>
+                  <option value="OTHER" data-i18n="opt_dept_other">অন্যান্য সরকারি / স্বায়ত্তশাসিত সংস্থা</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_div_dist_lbl">বিভাগ ও জেলা (Division & District):</label>
+                <input type="text" class="input-field" id="reqLocation" placeholder="যেমন: রংপুর বিভাগ, কুড়িগ্রাম জেলা" data-i18n-ph="form_div_dist_ph" required>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section-title" data-i18n="form_sec_infra">২. অবকাঠামো ও কাঠামোগত তথ্য</div>
+
+            <div class="input-group">
+              <label class="input-label" data-i18n="form_infra_name_lbl">সেতু / অবকাঠামোর নাম ও অবস্থান:</label>
+              <input type="text" class="input-field" id="reqInfraName" placeholder="যেমন: তিস্তা সংযোগ গার্ডার সেতু, পিয়ার নং ৩ ও ৪" data-i18n-ph="form_infra_name_ph" required>
+            </div>
+
+            <div class="form-row-2">
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_infra_type_lbl">অবকাঠামোর ধরন (Type):</label>
+                <select class="input-field" id="reqInfraType">
+                  <option value="road_bridge" data-i18n="opt_infra_road">সড়ক সেতু (Road Bridge)</option>
+                  <option value="rail_bridge" data-i18n="opt_infra_rail">রেলওয়ে ট্রাস / গার্ডার সেতু (Rail Bridge)</option>
+                  <option value="culvert" data-i18n="opt_infra_culvert">কালভার্ট / বক্স কালভার্ট (Culvert)</option>
+                  <option value="flyover" data-i18n="opt_infra_flyover">ফ্লাইওভার / এলিভেটেড এক্সপ্রেসওয়ে</option>
+                  <option value="embankment" data-i18n="opt_infra_embankment">নদী তীররক্ষা বাঁধ ও গ্রয়েন (River Embankment)</option>
+                  <option value="mega_complex" data-i18n="opt_infra_complex">মেগা সরকারি ভবন / কমপ্লেক্স</option>
+                  <option value="other" data-i18n="opt_infra_other">অন্যান্য বিশেষ স্থাপনা</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_span_lbl">স্প্যান সংখ্যা ও আনুমানিক দৈর্ঘ্য:</label>
+                <input type="text" class="input-field" id="reqSpanLength" placeholder="যেমন: ৮ স্প্যান, মোট দৈর্ঘ্য ২৪০ মিটার" data-i18n-ph="form_span_ph">
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_prio_lbl">পরিদর্শনের অগ্রাধিকার (Priority Level):</label>
+                <select class="input-field" id="reqPriority">
+                  <option value="routine" data-i18n="form_prio_opt1">রুটিন অডিট (Routine Audit - ১-২ সপ্তাহ)</option>
+                  <option value="urgent" data-i18n="form_prio_opt2">জরুরি মূল্যায়ন (Urgent Assessment - ৩-৫ দিন)</option>
+                  <option value="emergency" data-i18n="form_prio_opt3" style="color:#f87171; font-weight:700;">জরুরি দুর্যোগ রেসপন্স (Disaster Rapid Response - ২৪-৪৮ ঘণ্টা)</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_date_lbl">সম্ভাব্য পরিদর্শনের তারিখ:</label>
+                <input type="date" class="input-field" id="reqPreferredDate">
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label class="input-label" data-i18n="form_scope_lbl">বিশেষ পর্যবেক্ষণ বা ক্ষতির বিবরণ (Scope of Concern):</label>
+              <textarea class="input-field" id="reqNotes" rows="3" placeholder="যেমন: পিয়ারে হেয়ারলাইন ক্র্যাক, বিয়ারিং প্যাড স্থানচ্যুতি, রিভারবেড স্কাউয়ারিং, ড্রেনেজ লিকেজ ইত্যাদি..." data-i18n-ph="form_scope_ph" style="resize:vertical;"></textarea>
+            </div>
+
+            <div class="input-group">
+              <label class="input-label" data-i18n="form_file_lbl">নকশা / পূর্ববর্তী পরিদর্শন প্রতিবেদন আপলোড (ঐচ্ছিক):</label>
+              <div class="file-upload-dropzone" id="fileDropzoneArea">
+                <input type="file" id="reqDocsUpload" multiple accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.docx,.zip">
+                <div class="file-upload-icon">📁</div>
+                <div class="file-upload-text" data-i18n="form_file_drop">ফাইল এখানে ড্রপ করুন অথবা ব্রাউজ করুন (PDF, DWG, JPG, PNG)</div>
+                <div class="file-upload-hint" data-i18n="form_file_hint">সর্বোচ্চ ৫০ মেগাবাইট পর্যন্ত ফাইল সংযুক্ত করা যাবে</div>
+                <div class="file-list-preview" id="fileUploadPreview"></div>
+              </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="form-section-title" data-i18n="form_sec_services">৩. প্রয়োজনীয় সেবাসমূহ (Service Package)</div>
+
+            <div class="services-checkbox-grid">
+              <label class="service-checkbox-card">
+                <input type="checkbox" checked value="crack_defect">
+                <span data-i18n="form_srv_opt1">১০০এমপি অপটিক্যাল ক্র্যাক ও ডিফেক্ট স্ক্যান</span>
+              </label>
+              <label class="service-checkbox-card">
+                <input type="checkbox" checked value="biams_cloud">
+                <span data-i18n="form_srv_opt2">BIAMS ক্লাউড পোর্টাল ও অডিট পিডিএফ রিপোর্ট</span>
+              </label>
+              <label class="service-checkbox-card">
+                <input type="checkbox" checked value="cinematic_doc">
+                <span data-i18n="form_srv_opt3">৪কে ইঞ্জিনিয়ারিং সিনেমাটিক তথ্যচিত্র</span>
+              </label>
+              <label class="service-checkbox-card" style="align-items:flex-start;">
+                <input type="checkbox" value="scour_bathymetry" style="margin-top:3px;">
+                <div style="display:flex; flex-direction:column; gap:3px;">
+                  <span data-i18n="form_srv_opt4">নদী তলদেশ স্কাউয়ারিং ও এপ্রোচ ড্রোন ম্যাপিং</span>
+                  <small class="service-opt-note" data-i18n="form_srv_opt4_note" style="font-size:0.75rem; color:#38bdf8; line-height:1.3; font-weight:500;">★ সেতু পিয়ার ফাউন্ডেশনের স্থায়িত্ব ও বন্যা পরবর্তী স্কাউয়ারিং গভীরতা পরিমাপে অতীব জরুরি</small>
+                </div>
+              </label>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="form-section-title" data-i18n="form_sec_official">৪. দায়িত্বশীল সরকারি কর্মকর্তা / আবেদনকারী</div>
+
+            <div class="form-row-2">
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_off_name_lbl">কর্মকর্তার নাম ও পদবি:</label>
+                <input type="text" class="input-field" id="reqOfficialName" placeholder="যেমন: মোঃ রফিকুল ইসলাম, নির্বাহী প্রকৌশলী" data-i18n-ph="form_off_name_ph" required>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" data-i18n="form_off_email_lbl">অফিসিয়াল ইমেইল:</label>
+                <input type="email" class="input-field" id="reqOfficialEmail" placeholder="executive.engineer@lged.gov.bd" data-i18n-ph="form_off_email_ph" required>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label class="input-label" data-i18n="form_off_phone_lbl">মোবাইল ও হোয়াটসঅ্যাপ নম্বর:</label>
+              <input type="tel" class="input-field" id="reqOfficialPhone" placeholder="017XXXXXXXX" required>
+            </div>
+
+            <button type="submit" class="btn-main" style="width:100%; justify-content:center; padding:15px; margin-top:10px;" data-i18n="contact_submit_btn">
+              📤 অফিসিয়াল রিকুইজিশন সাবমিট করুন
+            </button>
+
+            <div id="formSuccessAlert" style="display:none; margin-top:18px; padding:16px 20px; background:rgba(16, 185, 129, 0.12); border:1.5px solid rgba(16, 185, 129, 0.45); border-radius:var(--radius-sm); color:var(--text-white); font-size:0.90rem; line-height:1.6;">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FULLSCREEN BOARDROOM PRESENTATION DECK
+       ========================================================================== -->
+  <div class="pres-modal" id="presentationOverlay">
+    <div class="pres-nav-top">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-size:1.05rem; font-weight:800; color:var(--primary);">CineCraft</span>
+        <span style="color:var(--text-muted);">|</span>
+        <span style="font-size:0.84rem; color:#fff;" data-i18n="pres_modal_sub">LGED • PWD • Bangladesh Railway • RHD Executive Boardroom Deck</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="font-size:0.88rem; font-weight:700; color:var(--accent-gold);" id="presSlideIndicator">1 / 10</span>
+        <button class="btn-ghost" id="presCloseBtn" style="padding:6px 14px; font-size:0.82rem;" data-i18n="pres_btn_exit">✕ এক্সিট (Esc)</button>
+      </div>
+    </div>
+
+    <div class="pres-main-slide-viewport">
+      
+      <!-- Slide 1 -->
+      <div class="slide-deck-card active">
+        <div style="text-align:center; max-width:850px; margin:0 auto;">
+          <div class="hero-badge" style="margin-bottom:18px;">
+            <span class="dot"></span>
+            <span data-i18n="pres_s1_badge">LGED • PWD • বাংলাদেশ রেলওয়ে • RHD এক্সিকিউটিভ ডেক</span>
+          </div>
+          <h1 style="font-size:3rem; font-weight:800; color:var(--text-white); margin-bottom:18px; line-height:1.2;">
+            <span data-i18n="pres_s1_title">স্মার্ট অবকাঠামো বিনির্মাণে <span style="color:var(--text-white); text-decoration:underline; text-decoration-color:var(--accent-ash);">ড্রোন স্ট্রাকচারাল ইন্সপেকশন</span> ও ডিজিটাল ডাটাবেজ</span>
+          </h1>
+          <p style="font-size:1.25rem; color:var(--text-body); line-height:1.7; margin-bottom:36px;" data-i18n="pres_s1_desc">
+            স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED), গণপূর্ত অধিদপ্তর (PWD) ও বাংলাদেশ রেলওয়ে সহ সকল সরকারি মেগা প্রকল্পের নির্বাহি প্রকৌশলীদের জন্য পূর্ণাঙ্গ কারিগরি প্রস্তাবনা।
+          </p>
+          <div style="display:inline-flex; gap:20px; background:var(--bg-surface-elevated); padding:16px 28px; border-radius:var(--radius-md); border:1px solid var(--border-light); color:var(--text-white);">
+            <div data-i18n="pres_s1_presenter">🏢 <strong>উপস্থাপক:</strong> CineCraft</div>
+            <div data-i18n="pres_s1_network">📍 <strong>নেটওয়ার্ক:</strong> রংপুর সেন্ট্রাল হাব ও দেশব্যাপী ৬৪ জেলা</div>
+            <div data-i18n="pres_s1_tech">⚙️ <strong>প্রযুক্তি:</strong> DJI Mavic 4 Pro ১০০এমপি ও ক্লাউড ডাটাবেজ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide-deck-card">
+        <div style="max-width:1050px; margin:0 auto;">
+          <h2 style="font-size:2.2rem; color:var(--primary); margin-bottom:12px;" data-i18n="pres_s2_title">প্রথাগত পদ্ধতি বনাম আধুনিক ড্রোন স্ট্রাকচারাল ইন্সপেকশন</h2>
+          <p style="font-size:1.05rem; color:var(--text-body); margin-bottom:28px;" data-i18n="pres_s2_sub">কেন প্রতিটি প্রকৌশল দপ্তরকে আধুনিক ড্রোন সার্ভে অন্তর্ভুক্ত করতে হবে?</p>
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+            <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); padding:26px; border-radius:var(--radius-md);">
+              <h3 style="color:var(--text-white); margin-bottom:14px;" data-i18n="pres_s2_c1_title">❌ প্রথাগত পরিদর্শন চ্যালেঞ্জ</h3>
+              <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:0.95rem; color:var(--text-body);">
+                <li data-i18n="pres_s2_c1_b1">মাচা তৈরি বা ঝুলন্ত দড়িতে পিয়ার ও ফাসাদে পৌঁছানো অত্যন্ত ঝুঁকিপূর্ণ ও সময়সাপেক্ষ।</li>
+                <li data-i18n="pres_s2_c1_b2">আন্ডার-ডেক ৫-গার্ডার স্পেস ও বহুতল ভবনের কার্নিশে দৃষ্টি পৌঁছানো প্রায় অসম্ভব।</li>
+                <li data-i18n="pres_s2_c1_b3">ট্রাফিক বন্ধ করতে হয় বা নৌযান চলাচল নিয়ন্ত্রণ করতে হয়।</li>
+                <li data-i18n="pres_s2_c1_b4">পরিদর্শন প্রতিবেদন বেশিরভাগ ক্ষেত্রেই স্মৃতি বা অস্পষ্ট মোবাইল ছবির ওপর নির্ভরশীল।</li>
+              </ul>
+            </div>
+
+            <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-accent); padding:26px; border-radius:var(--radius-md);">
+              <h3 style="color:var(--text-white); margin-bottom:14px;" data-i18n="pres_s2_c2_title">CineCraft ড্রোন সমাধান</h3>
+              <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:0.95rem; color:var(--text-body);">
+                <li data-i18n="pres_s2_c2_b1">১০০% শূন্য মানবঝুঁকি—ড্রোন সম্পূর্ণ অগম্য স্পেসে নিখুঁতভাবে পৌঁছে যায়।</li>
+                <li data-i18n="pres_s2_c2_b2">মিলিমিটার-লেভেল বিয়ারিং ক্র্যাক, নাট মরিচা ও ফাসাদ স্প্যালিং হাই-রেজুলেশনে রেকর্ড।</li>
+                <li data-i18n="pres_s2_c2_b3">বিনা ট্রাফিক ডাইভারশনে ১৫-২০ মিনিটে প্রতিটি স্প্যানের পূর্ণাঙ্গ ডাটা সংগ্রহ।</li>
+                <li data-i18n="pres_s2_c2_b4">প্রতিটি খুঁটিনাটি ডিজিটাল ডাটাবেজে সংরক্ষণ যা বছরের পর বছর তুলনা করা সম্ভব।</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide-deck-card">
+        <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.2fr 0.8fr; gap:32px; align-items:center;">
+          <div>
+            <div class="hero-badge" style="margin-bottom:10px;"><span class="dot"></span><span data-i18n="pres_s3_badge">কেস স্টাডি ০১ • স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED)</span></div>
+            <h2 style="font-size:2.1rem; color:var(--text-white); margin-bottom:12px;" data-i18n="pres_s3_title">কুষ্টিয়া গড়াই স্টিল ট্রাস সেতু করিডোর অডিট</h2>
+            <p style="font-size:1rem; color:var(--text-body); line-height:1.7; margin-bottom:20px;" data-i18n="pres_s3_desc">
+              গড়াই নদীর উপর স্থানীয় সরকার প্রকৌশল অধিদপ্তরের (LGED) গুরুত্বপূর্ণ স্টিল ট্রাস সেতু ও সংযোগ করিডোর অডিট।
+            </p>
+            <div style="background:var(--bg-surface-elevated); border-left:3px solid var(--accent-silver); padding:16px; border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+              <h4 style="color:var(--text-white); margin-bottom:8px;" data-i18n="pres_findings_head">শনাক্তকৃত গুরুত্বপূর্ণ ফলাফল:</h4>
+              <p style="font-size:0.9rem; color:var(--text-body); line-height:1.6;" data-i18n="pres_s3_findings">
+                ১. পট বিয়ারিং পেডেস্টাল কংক্রিটে ৩.৫ মিমি স্প্যালিং ও অ্যাঙ্কর নাট মরিচা।<br>
+                ২. শীর্ষ ও তির্যক কর্ডের গাছেট প্লেট রিভেটের টান ও জ্যামিতিক স্থিতিশীলতা অক্ষত।<br>
+                ৩. সংযোগকারী পরিবহন করিডোর ও নদীর তলদেশের স্যাটেলাইট-তুল্য ড্রোন অর্থোম্যাপ।
+              </p>
+            </div>
+          </div>
+          <div style="border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--border-light);">
+            <img src="assets/images/hero_gorai_panorama.jpg" alt="Gorai" style="width:100%; height:320px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide-deck-card">
+        <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:0.8fr 1.2fr; gap:32px; align-items:center;">
+          <div style="border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--border-light);">
+            <img src="assets/images/hero_barishal_bridge.jpg" alt="Barishal" style="width:100%; height:320px; object-fit:cover;">
+          </div>
+          <div>
+            <div class="hero-badge" style="margin-bottom:10px;"><span class="dot"></span><span data-i18n="pres_s4_badge">কেস স্টাডি ০২ • স্থানীয় সরকার প্রকৌশল অধিদপ্তর (LGED)</span></div>
+            <h2 style="font-size:2.1rem; color:var(--text-white); margin-bottom:12px;" data-i18n="pres_s4_title">বরিশাল ডিভিশনাল প্রিস্ট্রেসড গার্ডার সেতু ও পিয়ার অডিট</h2>
+            <p style="font-size:1rem; color:var(--text-body); line-height:1.7; margin-bottom:20px;" data-i18n="pres_s4_desc">
+              বরিশালের প্রধান নদীবক্ষে নির্মিত মাল্টি-স্প্যান ৫-গার্ডার সেতুর আন্ডার-ডেক ক্রল ফ্লাইট ও পিয়ার কলাম অডিট।
+            </p>
+            <div style="background:var(--bg-surface-elevated); border-left:3px solid var(--accent-silver); padding:16px; border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+              <h4 style="color:var(--text-white); margin-bottom:8px;" data-i18n="pres_findings_head">শনাক্তকৃত গুরুত্বপূর্ণ ফলাফল:</h4>
+              <p style="font-size:0.9rem; color:var(--text-body); line-height:1.6;" data-i18n="pres_s4_findings">
+                ১. এবার্টমেন্ট A-1 সংলগ্ন এক্সপানশন জয়েন্টে বটগাছের চারা অনুপ্রবেশ (জরুরি কর্তন প্রয়োজন)।<br>
+                ২. ইলাস্টোমেরিক বিয়ারিং প্যাডের উপরিভাগে ওজোন ক্র্যাক ও ১২ মিমি সিটিং ডিফারেনশিয়াল।<br>
+                ৩. ডেক ড্রেনেজ ড্রিপ নালীর চুনের দাগ ও পিয়ার সারফেসে রিবার কভার অডিট।
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5: PWD Government Complex & Facade Inspection -->
+      <div class="slide-deck-card">
+        <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1.2fr 0.8fr; gap:32px; align-items:center;">
+          <div>
+            <div class="hero-badge" style="margin-bottom:10px;"><span class="dot"></span><span data-i18n="pres_s5_badge">কেস স্টাডি ০৩ • গণপূর্ত অধিদপ্তর (PWD)</span></div>
+            <h2 style="font-size:2.1rem; color:var(--text-white); margin-bottom:12px;" data-i18n="pres_s5_title">জাতীয় প্রশাসনিক মেগা কমপ্লেক্স ও ফাসাদ অডিট</h2>
+            <p style="font-size:1rem; color:var(--text-body); line-height:1.7; margin-bottom:20px;" data-i18n="pres_s5_desc">
+              গণপূর্ত অধিদপ্তরের (PWD) অধীনে নির্মিত বহুতল সরকারি প্রশাসনিক কমপ্লেক্স ও প্রধান ভবনসমূহের ড্রোন ফাসাদ স্ক্যান।
+            </p>
+            <div style="background:var(--bg-surface-elevated); border-left:3px solid var(--accent-silver); padding:16px; border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+              <h4 style="color:var(--text-white); margin-bottom:8px;" data-i18n="pres_findings_head">শনাক্তকৃত গুরুত্বপূর্ণ ফলাফল:</h4>
+              <p style="font-size:0.9rem; color:var(--text-body); line-height:1.6;" data-i18n="pres_s5_findings">
+                ১. এক্সটেরিয়র কার্টেন গ্লাস ও গ্রানাইট ক্ল্যাডিং প্যানেলের নোঙর ও কম্পন স্থায়িত্ব পরীক্ষা।<br>
+                ২. প্যারাপেট ওয়াল ও ছাদের এক্সপানশন জয়েন্টে সিলান্ট ক্ষয় ও পানি লিকেজ ঝুঁকি শনাক্ত।<br>
+                ৩. ঝুলন্ত মাচা বা ক্রেন ছাড়া ১০০% শূন্য ঝুঁকিতে দ্রুততম সময়ে হাই-রেজুলেশন অর্থোম্যাপ প্রস্তুত।
+              </p>
+            </div>
+          </div>
+          <div style="border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--border-light);">
+            <img src="assets/images/pwd_mega_complex.jpg" alt="PWD Complex" style="width:100%; height:320px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="slide-deck-card">
+        <div style="max-width:1050px; margin:0 auto; text-align:center;">
+          <h2 style="font-size:2.2rem; color:#fff; margin-bottom:8px;" data-i18n="pres_s6_title">১০০ মেগাপিক্সেল অপটিক্যাল জুমে ডিফেক্ট প্রমাণ</h2>
+          <p style="font-size:1rem; color:var(--text-body); margin-bottom:26px;" data-i18n="pres_s6_sub">প্রকৌশল গবেষণাগার মানের প্রামাণ্য দলিল</p>
+          
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); border-radius:var(--radius-md); overflow:hidden;">
+              <img src="assets/images/bearing_pot_spall.jpg" style="height:160px; width:100%; object-fit:cover;">
+              <div style="padding:12px; text-align:left;">
+                <span class="station-pill critical" data-i18n="pres_s6_c1_badge">জরুরি</span>
+                <div style="font-weight:700; color:#fff; font-size:0.88rem;" data-i18n="pres_s6_c1_title">বিয়ারিং পেডেস্টাল স্প্যাল</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);" data-i18n="pres_s6_c1_sub">কুষ্টিয়া গড়াই • পিয়ার ৩</div>
+              </div>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); border-radius:var(--radius-md); overflow:hidden;">
+              <img src="assets/images/vegetation_joint_ficus.jpg" style="height:160px; width:100%; object-fit:cover;">
+              <div style="padding:12px; text-align:left;">
+                <span class="station-pill high" data-i18n="pres_s6_c2_badge">উচ্চ ঝুঁকি</span>
+                <div style="font-weight:700; color:#fff; font-size:0.88rem;" data-i18n="pres_s6_c2_title">জয়েন্টে বটগাছের শেকড়</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);" data-i18n="pres_s6_c2_sub">বরিশাল • এবার্টমেন্ট জয়েন্ট</div>
+              </div>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); border-radius:var(--radius-md); overflow:hidden;">
+              <img src="assets/images/bearing_ozone_cracking.jpg" style="height:160px; width:100%; object-fit:cover;">
+              <div style="padding:12px; text-align:left;">
+                <span class="station-pill normal" data-i18n="pres_s6_c3_badge">পর্যবেক্ষণ</span>
+                <div style="font-weight:700; color:#fff; font-size:0.88rem;" data-i18n="pres_s6_c3_title">রাবার প্যাড ওজোন ক্র্যাক</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);" data-i18n="pres_s6_c3_sub">গড়াই স্টিল ট্রাস বিয়ারিং</div>
+              </div>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); border-radius:var(--radius-md); overflow:hidden;">
+              <img src="assets/images/pwd_facade_inspection.jpg" style="height:160px; width:100%; object-fit:cover;">
+              <div style="padding:12px; text-align:left;">
+                <span class="station-pill high" data-i18n="pres_s6_c4_badge">পিডব্লিউডি</span>
+                <div style="font-weight:700; color:#fff; font-size:0.88rem;" data-i18n="pres_s6_c4_title">ফাসাদ সিলান্ট ও ক্ল্যাডিং</div>
+                <div style="font-size:0.75rem; color:var(--text-muted);" data-i18n="pres_s6_c4_sub">গণপূর্ত মেগা কমপ্লেক্স</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="slide-deck-card">
+        <div style="max-width:1050px; margin:0 auto;">
+          <h2 style="font-size:2.2rem; color:var(--primary); margin-bottom:12px;" data-i18n="pres_s7_title">ওয়েব ও ব্রিজ অ্যাসেট ম্যানেজমেন্ট সিস্টেম (BIAMS)</h2>
+          <p style="font-size:1.05rem; color:var(--text-body); margin-bottom:28px;">
+            <span data-i18n="pres_s7_sub">আমরা কেবল ছবি-ভিডিও তুলে শেষ করি না—এলজিইডি ও পিডব্লিউডির জন্য ক্লাউড ডাটাবেজ পোর্টালও প্রস্তুত করি।</span>
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:24px; border-radius:var(--radius-md);">
+              <div style="font-size:1.8rem; margin-bottom:10px;">🗂️</div>
+              <h3 style="color:#fff; font-size:1.1rem; margin-bottom:8px;" data-i18n="pres_s7_f1_title">ডিজিটাল অ্যাসেট ইনভেন্টরি</h3>
+              <p style="font-size:0.88rem; color:var(--text-body);">
+                <span data-i18n="pres_s7_f1_desc">ইউনিক কোড, জিপিএস কোঅর্ডিনেট, স্প্যান সংখ্যা ও কাঠামোগত ইতিহাস সেন্ট্রাল পোর্টালে সংরক্ষিত।</span>
+              </p>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:24px; border-radius:var(--radius-md);">
+              <div style="font-size:1.8rem; margin-bottom:10px;">📊</div>
+              <h3 style="color:#fff; font-size:1.1rem; margin-bottom:8px;" data-i18n="pres_s7_f2_title">স্ট্রাকচারাল হেলথ ট্র্যাকিং</h3>
+              <p style="font-size:0.88rem; color:var(--text-body);">
+                <span data-i18n="pres_s7_f2_desc">ফাটলের বিস্তার বা বিয়ারিং প্যাডের অবনমন ট্র্যাক করার জন্য টাইম-ল্যাপস ডেটাবেজ সুবিধা।</span>
+              </p>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:24px; border-radius:var(--radius-md);">
+              <div style="font-size:1.8rem; margin-bottom:10px;">📄</div>
+              <h3 style="color:#fff; font-size:1.1rem; margin-bottom:8px;" data-i18n="pres_s7_f3_title">স্বয়ংক্রিয় PDF রিপোর্ট</h3>
+              <p style="font-size:0.88rem; color:var(--text-body);">
+                <span data-i18n="pres_s7_f3_desc">মন্ত্রণালয় ও প্রধান প্রকৌশলীর কাছে উপস্থাপনের উপযোগী ফরম্যাটেড পরিদর্শন সারসংক্ষেপ এক ক্লিকে প্রিন্ট।</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="slide-deck-card">
+        <div style="max-width:1000px; margin:0 auto; text-align:center;">
+          <h2 style="font-size:2.2rem; color:#fff; margin-bottom:12px;" data-i18n="pres_s8_title">সারাদেশে কাজের বাস্তব অভিজ্ঞতা</h2>
+          <p style="font-size:1.05rem; color:var(--text-body); margin-bottom:28px;">
+            <span data-i18n="pres_s8_sub">রংপুর সেন্ট্রাল হাব সহ কুড়িগ্রাম, দিনাজপুর, বগুড়া, কুষ্টিয়া, যশোর, বরিশাল ও ঢাকায় সফল মিশন</span>
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:16px; border-radius:var(--radius-sm);">
+              <strong style="color:var(--accent-gold); font-size:1.05rem;" data-i18n="pres_s8_h1_title">রংপুর ও কুড়িগ্রাম</strong>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;"><span data-i18n="pres_s8_h1_desc">সেন্ট্রাল হাব ও তিস্তা বেসিন</span></p>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:16px; border-radius:var(--radius-sm);">
+              <strong style="color:var(--primary); font-size:1.05rem;" data-i18n="pres_s8_h2_title">দিনাজপুর ও বগুড়া</strong>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;"><span data-i18n="pres_s8_h2_desc">করতোয়া ও পুনর্ভবা করিডোর</span></p>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:16px; border-radius:var(--radius-sm);">
+              <strong style="color:var(--accent-cyan); font-size:1.05rem;" data-i18n="pres_s8_h3_title">কুষ্টিয়া ও যশোর</strong>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;"><span data-i18n="pres_s8_h3_desc">গড়াই ট্রাস ও সংযোগ সেতু</span></p>
+            </div>
+            <div style="background:var(--bg-surface); border:1px solid var(--border-light); padding:16px; border-radius:var(--radius-sm);">
+              <strong style="color:#fff; font-size:1.05rem;" data-i18n="pres_s8_h4_title">বরিশাল ও ঢাকা</strong>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;"><span data-i18n="pres_s8_h4_desc">মাল্টি-স্প্যান ও মেগা সচিবালয়</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9 -->
+      <div class="slide-deck-card">
+        <div style="max-width:1000px; margin:0 auto;">
+          <h2 style="font-size:2.2rem; color:var(--primary); margin-bottom:12px;" data-i18n="pres_s9_title">ফ্লিট ও নিরাপত্তা প্রটোকল</h2>
+          <p style="font-size:1.05rem; color:var(--text-body); margin-bottom:28px;"><span data-i18n="pres_s9_sub">আন্তর্জাতিক মানের এন্টারপ্রাইজ হার্ডওয়্যার ও সিভিল এভিয়েশন সম্মতি</span></p>
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+            <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); padding:24px; border-radius:var(--radius-md);">
+              <h3 style="color:var(--text-white); margin-bottom:12px;" data-i18n="pres_s9_sec_hw">🛰️ হার্ডওয়্যার কনফিগারেশন</h3>
+              <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.9rem; color:var(--text-body);">
+                <li data-i18n="pres_s9_d1"><strong>DJI Mavic 4 Pro:</strong> প্রাইমারি ১০০ মেগাপিক্সেল অপটিক্যাল (সকল সাইট ফটোর ভিত্তি)</li>
+                <li data-i18n="pres_s9_d2"><strong>ড্রোন ফ্লিট:</strong> DJI Mavic 3 Pro, DJI Mavic 3 Enterprise RTK, Mavic 2</li>
+                <li data-i18n="pres_s9_c1"><strong>গ্রাউন্ড সিনেমা ভিডিও:</strong> Sony FX3 ও Sony FX30 (4K 120p, 10-bit 4:2:2 D-Log)</li>
+                <li data-i18n="pres_s9_c2"><strong>গ্রাউন্ড ফটো ক্যামেরা:</strong> Canon 5D Mark IV, Sony A7 III, Sony A7 IV</li>
+                <li data-i18n="pres_s9_d3"><strong>টেলিমিতি ও জিপিএস:</strong> RTK মিলিমিটার-লেভেল রিয়েল-টাইম জিও-ট্যাগিং</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); padding:24px; border-radius:var(--radius-md);">
+              <h3 style="color:var(--text-white); margin-bottom:12px;" data-i18n="pres_s9_sec_safety">🛡️ অপারেশনাল সেফটি প্রটোকল</h3>
+              <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.9rem; color:var(--text-body);">
+                <li data-i18n="pres_s9_p1">সিএএবি (CAAB) ও স্থানীয় প্রশাসনের সাথে সমন্বয়</li>
+                <li data-i18n="pres_s9_p2">অমনি-ডিরেকশনাল অবস্ট্যাকল সেন্সিং (সেতুর সাথে ধাক্কা প্রতিরোধ)</li>
+                <li data-i18n="pres_s9_p3">অটোমেটিক ফেইলসেফ রিটার্ন-টু-হোম (RTH) সিস্টেম</li>
+                <li data-i18n="pres_s9_p4">নদী ও মহাসড়ক ট্রাফিকের কোনো ব্যাঘাত না ঘটিয়ে ফ্লাইট</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 10 -->
+      <div class="slide-deck-card">
+        <div style="max-width:900px; margin:0 auto; text-align:center;">
+          <div class="hero-badge" style="margin-bottom:12px;">
+            <span data-i18n="pres_s10_badge">পরবর্তী পদক্ষেপ • Next Steps</span>
+          </div>
+          <h2 style="font-size:2.4rem; color:var(--text-white); margin-bottom:14px;">
+            <span data-i18n="pres_s10_title">দেশব্যাপী সরকারি অবকাঠামো ও সেতু প্রকল্পে যৌথ কাজের প্রস্তাবনা</span>
+          </h2>
+          <p style="font-size:1.15rem; color:var(--text-body); line-height:1.7; margin-bottom:30px;" data-i18n="pres_s10_desc">
+            জনাব, রংপুর সেন্ট্রাল কমান্ডের সরাসরি নিয়ন্ত্রণে দেশব্যাপী ৬৪ জেলার যেকোনো পাইলট ব্রিজ বা সরকারি ভবনের জন্য আমরা পরীক্ষামূলক ড্রোন স্ট্রাকচারাল হেলথ অডিট পরিচালনায় সম্পূর্ণ প্রস্তুত।
+          </p>
+          <div style="display:inline-block; background:var(--bg-surface-elevated); border:1px solid var(--border-accent); padding:24px 36px; border-radius:var(--radius-md); margin-bottom:28px;">
+            <div style="font-size:1.3rem; font-weight:800; color:var(--text-white); margin-bottom:8px;">CineCraft</div>
+            <div style="font-size:0.96rem; color:var(--text-body); margin-bottom:6px;">
+              <span data-i18n="pres_s10_contact_lbl">মোবাইল: <a href="tel:+8801772337400" onclick="window.open('tel:+8801772337400', '_self');" style="color:var(--text-white); font-weight:700; text-decoration:none;">+880 1772-337400</a> | ইমেইল: <a href="mailto:misaykatcinecraft@gmail.com" style="color:var(--text-white); font-weight:700; text-decoration:none;">misaykatcinecraft@gmail.com</a></span>
+            </div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;"><span data-i18n="pres_s10_hub">অপারেশনাল নেটওয়ার্ক: রংপুর সেন্ট্রাল হাব • দেশব্যাপী ৬৪ জেলায় সরাসরি অন-সাইট সেবা</span></div>
+          </div>
+          <div>
+            <button class="btn-main" onclick="document.getElementById('presCloseBtn').click(); document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+              <span data-i18n="pres_s10_btn">✉️ অফিসিয়াল রিকুইজিশন পোর্টাল খুলুন</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pres-nav-bottom">
+      <div style="font-size:0.82rem; color:var(--text-muted);">
+        <span data-i18n="pres_shortcuts">শর্টকাট: <kbd>Space</kbd> / <kbd>→</kbd> পরবর্তী • <kbd>←</kbd> পূর্ববর্তী • <kbd>Esc</kbd> বন্ধ</span>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn-ghost" id="presPrevBtn" style="padding:6px 14px; font-size:0.82rem;" data-i18n="pres_btn_prev">◀ পূর্ববর্তী</button>
+        <button class="btn-main" id="presNextBtn" style="padding:6px 14px; font-size:0.82rem;" data-i18n="pres_btn_next">পরবর্তী ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+            <img src="assets/images/cinecraft_logo.svg" alt="CineCraft Logo" style="width:36px; height:36px; filter:drop-shadow(0 0 8px rgba(56, 189, 248, 0.45));">
+            <span class="brand-name" style="font-size:1.35rem; font-weight:800; color:var(--text-white);">CineCraft</span>
+          </div>
+          <p style="font-size:0.84rem; color:var(--text-body); max-width:440px; margin-bottom:12px;" data-i18n="footer_desc">
+            LGED, PWD, RHD ও সরকারি মেগা প্রকল্পের জন্য ড্রোন স্ট্রাকচারাল ইন্সপেকশন, সিনেমাটোগ্রাফি ও ডিজিটাল ডাটাবেজ সমাধান।
+          </p>
+          <div style="font-size:0.84rem; color:var(--text-muted); margin-bottom:4px;">
+            <span data-i18n="footer_hotline">হটলাইন:</span> <a href="tel:+8801772337400" onclick="window.open('tel:+8801772337400', '_self');" style="color:var(--text-white); font-weight:700; text-decoration:none;">+880 1772-337400</a> | <span data-i18n="footer_email">ইমেইল:</span> <a href="mailto:misaykatcinecraft@gmail.com" style="color:var(--text-white); font-weight:700; text-decoration:none;">misaykatcinecraft@gmail.com</a>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted);" data-i18n="footer_net">
+            <span data-i18n="pres_s10_hub">অপারেশনাল নেটওয়ার্ক: রংপুর সেন্ট্রাল হাব • দেশব্যাপী ৬৪ জেলায় সরাসরি অন-সাইট সেবা</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
+          <div class="footer-links">
+            <a href="#hero" class="nav-link" data-i18n="nav_home">হোম</a>
+            <a href="#showreel" class="nav-link" data-i18n="nav_theater">ভিডিওজ</a>
+            <a href="#projects" class="nav-link" data-i18n="nav_projects">প্রজেক্ট</a>
+            <a href="#lens" class="nav-link" data-i18n="nav_lens">জুম</a>
+            <a href="#map" class="nav-link" data-i18n="nav_map">ম্যাপ</a>
+            <a href="#gallery" class="nav-link" data-i18n="nav_gallery">ফটোজ</a>
+            <a href="#biams" class="nav-link" data-i18n="nav_biams">BIAMS</a>
+            <a href="#contact" class="nav-link" data-i18n="nav_contact">যোগাযোগ</a>
+          </div>
+          <div style="display:flex; gap:12px; font-size:0.82rem;">
+            <a href="https://wa.me/8801772337400" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted); text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+              <span data-i18n="footer_wa">💬 সরাসরি হোয়াটসঅ্যাপ সাপোর্ট (+880 1772-337400)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy" data-i18n="footer_rights">
+          © ২০২৬ CineCraft। সর্বস্বত্ব সংরক্ষিত। বাংলাদেশ জাতীয় অবকাঠামো উন্নয়নে নিবেদিত।
+        </div>
+        <div class="footer-legal-links">
+          <a href="javascript:void(0)" class="legal-link" id="openPrivacyModal" data-i18n="footer_privacy">প্রাইভেসি পলিসি (Privacy Policy)</a>
+          <span class="legal-sep">•</span>
+          <a href="javascript:void(0)" class="legal-link" id="openTermsModal" data-i18n="footer_terms">শর্তাবলী ও নীতিমালা (Terms of Service)</a>
+          <span class="legal-sep">•</span>
+          <a href="#safety" class="legal-link" data-i18n="footer_caab_link">সিএএবি কমপ্লায়েন্স</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Privacy Policy Legal Modal -->
+  <div class="lightbox-overlay" id="privacyPolicyModal">
+    <div class="lightbox-modal-content" style="max-width:680px; padding:32px 28px; text-align:left; background:#0f172a; border:1px solid rgba(56, 189, 248, 0.4); border-radius:16px; color:#ffffff; box-shadow:0 16px 48px rgba(0,0,0,0.8);">
+      <button class="lightbox-close" id="closePrivacyModal">✕</button>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <span style="font-size:1.6rem;">🛡️</span>
+        <h3 style="color:#ffffff; font-size:1.35rem; font-weight:800; margin:0;" data-i18n="modal_privacy_title">গোপনীয়তা ও সরকারি ডেটা নিরাপত্তা নীতিমালা (Privacy Policy)</h3>
+      </div>
+      <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.75; display:flex; flex-direction:column; gap:14px; max-height:60vh; overflow-y:auto; padding-right:8px;">
+        <p data-i18n="modal_privacy_p1"><strong>১. জাতীয় মেগা অবকাঠামো ডেটা সুরক্ষা:</strong> CineCraft কর্তৃক পরিচালিত সকল ড্রোন পরিদর্শন, ৩ডি পয়েন্ট ক্লাউড, সাব-মিলিমিটার অপটিক্যাল ছবি এবং স্ট্রাকচারাল অডিট ডেটা রাষ্ট্রীয় গোপনীয়তা ও নিরাপত্তা নিশ্চিত করে সর্বোচ্চ এনক্রিপশনে সংরক্ষিত হয়。</p>
+        <p data-i18n="modal_privacy_p2"><strong>২. এনডিএ ও অ-উন্মোচন চুক্তি (Non-Disclosure):</strong> সংশ্লিষ্ট সরকারি বিভাগ (LGED, PWD, বাংলাদেশ রেলওয়ে, সেতু কর্তৃপক্ষ) ব্যতীত কোনো তৃতীয় পক্ষের সাথে এই ডেটা কখনোই শেয়ার করা হয় না。</p>
+        <p data-i18n="modal_privacy_p3"><strong>৩. সুরক্ষিত ক্লাউড ও এন্টারপ্রাইজ ব্যাকআপ:</strong> প্রতিটি ব্রিজের ইনভেন্টরি ও হেলথ ইনডেক্স AES-256 বিট এনক্রিপশনে ক্লাউড সার্ভারে রক্ষিত থাকে, যা কেবল অনুমোদিত সরকারি প্রকৌশলীদের জন্য পাসওয়ার্ড ও টু-ফ্যাক্টর অথেনটিকেশনের মাধ্যমে এক্সেসযোগ্য。</p>
+        <p data-i18n="modal_privacy_p4"><strong>৪. সিএএবি এভিয়েশন গোপনীয়তা বিধিমালা:</strong> বেসামরিক বিমান চলাচল কর্তৃপক্ষ (CAAB) নীতি অনুযায়ী জনসাধারণের ব্যক্তিগত গোপনীয়তা রক্ষা করে কেবল অনুমোদিত অবকাঠামোগত অংশ স্ক্যান করা হয়。</p>
+      </div>
+      <button class="btn-main" style="width:100%; justify-content:center; margin-top:22px;" id="agreePrivacyBtn">
+        <span data-i18n="modal_privacy_ack">অবগত হয়েছি</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Terms of Service Legal Modal -->
+  <div class="lightbox-overlay" id="termsModal">
+    <div class="lightbox-modal-content" style="max-width:680px; padding:32px 28px; text-align:left; background:#0f172a; border:1px solid rgba(56, 189, 248, 0.4); border-radius:16px; color:#ffffff; box-shadow:0 16px 48px rgba(0,0,0,0.8);">
+      <button class="lightbox-close" id="closeTermsModal">✕</button>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <span style="font-size:1.6rem;">📜</span>
+        <h3 style="color:#ffffff; font-size:1.35rem; font-weight:800; margin:0;" data-i18n="modal_terms_title">সেবা ব্যবহারের শর্তাবলী ও নিয়মাবলী (Terms of Service)</h3>
+      </div>
+      <div style="font-size:0.88rem; color:#cbd5e1; line-height:1.75; display:flex; flex-direction:column; gap:14px; max-height:60vh; overflow-y:auto; padding-right:8px;">
+        <p data-i18n="modal_terms_p1"><strong>১. অফিসিয়াল রিকুইজিশন ও শিডিউলিং:</strong> সরকারি বা অনুমোদিত প্রাতিষ্ঠানিক দপ্তর থেকে রিকুইজিশন প্রাপ্তির পর আমাদের কারিগরি টিম ২৪-৪৮ ঘণ্টার মধ্যে সাইট ভিজিট ও ফ্লাইট প্ল্যান চূড়ান্ত করে。</p>
+        <p data-i18n="modal_terms_p2"><strong>২. শূন্য ট্রাফিক ঝুঁকি নীতি (Zero-Traffic Interruption):</strong> হাইওয়ে সেতু, ফ্লাইওভার বা সক্রিয় রেল লাইনে কোনো যানবাহন বন্ধ না করেই ড্রোন ফ্লাইট পরিচালিত হয়। সাইটের সাধারণ ট্রাফিক প্রবাহে কোনো অপ্রয়োজনীয় বিঘ্ন ছাড়াই নিরাপদ স্ট্যান্ডঅফ ডিসটেন্স বজায় রাখা হয়。</p>
+        <p data-i18n="modal_terms_p3"><strong>৩. স্ট্রাকচারাল হেলথ ইনডেক্স (SHI) মানদণ্ড:</strong> অডিট রিপোর্টের ফলাফল আন্তর্জাতিক নন-ডেস্ট্রাকটিভ টেস্টিং (NDT) ও ব্রিজ ইন্সপেকশন ম্যানুয়ালের সাথে সঙ্গতি রেখে প্রস্তুত করা হয়。</p>
+        <p data-i18n="modal_terms_p4"><strong>৪. দুর্যোগ রেসপন্স প্রতিশ্রুতি:</strong> আকস্মিক বন্যা, ভূমিকম্প বা নদীভাঙন পরিস্থিতিতে বিশেষ অগ্রাধিকার ভিত্তিতে দ্রুত মূল্যায়ন টিম দেশব্যাপী ৬৪ জেলায় সরাসরি অন-সাইট সেবা প্রদান করতে অঙ্গীকারবদ্ধ。</p>
+      </div>
+      <button class="btn-main" style="width:100%; justify-content:center; margin-top:22px;" id="agreeTermsBtn">
+        <span data-i18n="modal_terms_ack">সম্মত ও অনুমোদিত</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- iOS PWA Install Guidance Modal -->
+  <div class="lightbox-overlay" id="pwaIosModal">
+    <div class="lightbox-modal-content" style="max-width:420px; padding:28px 24px; text-align:center;">
+      <button class="lightbox-close" id="pwaIosCloseBtn">✕</button>
+      <div style="width:58px; height:58px; margin:0 auto 14px; border-radius:14px; overflow:hidden; box-shadow:0 6px 20px rgba(56, 189, 248, 0.35);">
+        <img src="assets/images/cinecraft_logo.svg" alt="CineCraft" style="width:100%; height:100%;">
+      </div>
+      <h3 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:8px;" data-i18n="pwa_ios_title">আইফোনে CineCraft অ্যাপ ইনস্টল করুন</h3>
+      <p style="color:var(--text-body); font-size:0.85rem; line-height:1.6; margin-bottom:18px;" data-i18n="pwa_ios_desc">
+        Safari ব্রাউজার দিয়ে CineCraft সরাসরি আপনার ফোনের হোম স্ক্রিনে অ্যাপ হিসেবে সেভ করতে:
+      </p>
+      <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-light); border-radius:12px; padding:14px 16px; text-align:left; font-size:0.84rem; color:var(--text-white); margin-bottom:20px; display:flex; flex-direction:column; gap:10px;">
+        <div data-i18n="pwa_step_1"><strong>১.</strong> Safari-র নিচের বারে <strong>Share ( <span style="font-size:1.05rem;">⎙</span> )</strong> বাটনে ট্যাপ করুন。</div>
+        <div data-i18n="pwa_step_2"><strong>২.</strong> মেনু স্ক্রোল করে <strong>'Add to Home Screen' ( ➕ )</strong> সিলেক্ট করুন。</div>
+        <div data-i18n="pwa_step_3"><strong>৩.</strong> উপরে ডানে <strong>'Add'</strong> বাটনে ট্যাপ করলেই ফোনের অ্যাপ তালিকায় যুক্ত হয়ে যাবে!</div>
+      </div>
+      <button class="btn-main" style="width:100%; justify-content:center;" onclick="document.getElementById('pwaIosModal').classList.remove('active')">
+        <span data-i18n="pwa_ios_gotit">বুঝতে পেরেছি</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/anti-gravity-webgl.js"></script>
+  <script src="assets/js/anti-gravity-parallax.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
