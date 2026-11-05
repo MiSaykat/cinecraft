@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ============================================================================
  * CINECRAFT - ANTI-GRAVITY WEBGL 3D STRUCTURAL POINT-CLOUD ENGINE
  * Real-time 3D Photogrammetry & LiDAR Simulation of Bridge Infrastructure
@@ -48,8 +48,37 @@
       }
 
       this.bindEvents();
+      this.initPerformanceObserver();
       this.onResize();
       this.animate();
+    }
+
+    /**
+     * Performance Optimization: Pause WebGL loop when hero is off-screen or tab is hidden
+     */
+    initPerformanceObserver() {
+      this.isPaused = false;
+      if ('IntersectionObserver' in window && this.canvas) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const wasPaused = this.isPaused;
+            this.isPaused = !entry.isIntersecting;
+            if (wasPaused && !this.isPaused) {
+              requestAnimationFrame(() => this.animate());
+            }
+          });
+        }, { threshold: 0.05 });
+        observer.observe(this.canvas);
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          this.isPaused = true;
+        } else {
+          this.isPaused = false;
+          requestAnimationFrame(() => this.animate());
+        }
+      }, { passive: true });
     }
 
     /**
@@ -382,6 +411,7 @@
     }
 
     animate() {
+      if (this.isPaused) return;
       requestAnimationFrame(() => this.animate());
 
       this.time += 0.006; // Majestic, gentle anti-gravity cadence

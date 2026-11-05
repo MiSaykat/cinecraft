@@ -4850,3 +4850,243 @@ img, video {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ==========================================================================
+   23. COMPREHENSIVE RESPONSIVE (DESKTOP, TABLET, MOBILE) & NAVIGATION ENGINE
+   ========================================================================== */
+
+/* Performance: Offscreen content visibility */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 750px;
+}
+
+/* User-Friendly Floating Back-to-Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1.5px rgba(255, 255, 255, 0.35);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s, background 0.2s, border-color 0.2s;
+  z-index: 990;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+  background: rgba(14, 165, 233, 0.25);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.8);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 14px 35px rgba(14, 165, 233, 0.35);
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Mobile & Tablet Backdrop Overlay */
+.nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 8, 16, 0.70);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 995;
+}
+
+.nav-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Tablet & Mobile Drawer Transition (<= 1040px) */
+@media (max-width: 1040px) {
+  .nav-center-menu {
+    position: static;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 76px !important;
+    left: 16px !important;
+    right: 16px !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    background: rgba(15, 23, 42, 0.94) !important;
+    backdrop-filter: blur(24px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), inset 0 1px 2px rgba(255, 255, 255, 0.25) !important;
+    z-index: 1000 !important;
+    gap: 8px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-16px) scale(0.97) !important;
+    transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s !important;
+    pointer-events: none !important;
+  }
+
+  .navbar.nav-open .nav-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-menu .nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 10px 16px !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    transition: background 0.18s ease, transform 0.18s ease !important;
+  }
+
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.active {
+    background: rgba(14, 165, 233, 0.18) !important;
+    border-color: rgba(56, 189, 248, 0.45) !important;
+    color: var(--primary) !important;
+    transform: translateX(4px) !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: var(--text-white) !important;
+    font-size: 1.15rem !important;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  .navbar.nav-open .mobile-toggle {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: rgba(239, 68, 68, 0.5) !important;
+    color: #f87171 !important;
+    transform: rotate(90deg) !important;
+  }
+}
+
+/* ==========================================================================
+   TABLET RESPONSIVE REFINEMENT (769px to 1024px)
+   Engineered for iPad Air, iPad Pro, Galaxy Tab and surface tablets
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 28px !important;
+  }
+
+  section {
+    padding: 65px 0 !important;
+  }
+
+  .hero {
+    padding-top: 110px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2.35rem, 4.8vw, 3.2rem) !important;
+    line-height: 1.22 !important;
+    max-width: 90% !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem !important;
+    max-width: 82% !important;
+    margin: 0 auto 28px !important;
+  }
+
+  .hero-cta-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .brief-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .chapters-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .case-card {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .case-media-side img.main-cover {
+    height: 380px !important;
+  }
+
+  .gis-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}

@@ -116,6 +116,7 @@
     }
 
     animate() {
+      if (this.chips.length === 0) return; // No floating chips to animate; save frame cycles
       requestAnimationFrame(() => this.animate());
 
       // Lerp mouse coordinates with anti-gravity damping
