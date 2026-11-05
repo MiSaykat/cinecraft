@@ -6,6 +6,9 @@
 ## 🌟 ওভারভিউ (Overview)
 **CineCraft** স্থানীয় সরকার প্রকৌশল অধিদপ্তর (**LGED**), গণপূর্ত অধিদপ্তর (**PWD**), বাংলাদেশ রেলওয়ে (**Bangladesh Railway**) এবং সড়ক ও জনপথ অধিদপ্তর (**RHD**) সহ সকল সরকারি মেগা প্রকল্পের জন্য অত্যাধুনিক ড্রোন স্ট্রাকচারাল ইন্সপেকশন, সিনেমাটোগ্রাফি, এরিয়াল ম্যাপিং এবং ওয়েব-ডাটাবেজ সিস্টেম প্রদানকারী একটি অগ্রণী প্রতিষ্ঠান।
 
+- 🌐 **অফিসিয়াল লাইভ ওয়েবসাইট (Primary Vercel Production):** [https://cinecraftbd.vercel.app/](https://cinecraftbd.vercel.app/)
+- 🌐 **ব্যাকআপ মিরর (GitHub Pages):** [https://misaykat.github.io/cinecraft-drone-inspection/](https://misaykat.github.io/cinecraft-drone-inspection/)
+
 এই পোর্টফোলিওটি বিশেষভাবে প্রস্তুত করা হয়েছে **রংপুর এলজিইডির নির্বাহী প্রকৌশলী (Executive Engineer)** এবং সারাদেশের নির্বাহী প্রকৌশলী ও প্রকল্প পরিচালকদের বোর্ডরুম মিটিংয়ে সরাসরি প্রদর্শনের জন্য।
 
 ---
